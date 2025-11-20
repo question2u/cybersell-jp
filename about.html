@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我们 | 日清不动产 Nisshin Real Estate</title>
+    <meta name="description" content="了解日清不动产的公司理念、专业团队和核心优势。我们专注于为在日外国人提供优质的房地产服务，让世界成为你的家。">
+    <meta name="keywords" content="日清不动产,公司介绍,团队介绍,不动产中介,外国人租房,房地产服务">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="关于我们 | 日清不动产 Nisshin Real Estate">
+    <meta property="og:description" content="了解日清不动产的公司理念、专业团队和核心优势。我们专注于为在日外国人提供优质的房地产服务。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" href="https://nisshin-real-estate.jp/about.html">
+    <meta property="og:image" href="https://nisshin-real-estate.jp/images/og-about.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/about.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Noto+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "日清不动产",
+      "alternateName": "Nisshin Real Estate",
+      "url": "https://nisshin-real-estate.jp",
+      "logo": "https://nisshin-real-estate.jp/images/nisshin-logo.png",
+      "description": "专门为在日外国人提供房地产服务的专业机构",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "道玄坂1-2-3 ABC大厦8F",
+        "addressLocality": "涩谷区",
+        "addressRegion": "东京都",
+        "postalCode": "150-0044",
+        "addressCountry": "JP"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+81-3-1234-5678",
+        "contactType": "customer service",
+        "availableLanguage": ["Japanese", "Chinese", "English", "French", "Vietnamese", "Korean", "Mongolian", "Malay"]
+      },
+      "sameAs": [
+        "https://www.facebook.com/nisshin-real-estate",
+        "https://twitter.com/nisshin_real_estate"
+      ]
+    }
+    </script>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <img src="images/nisshin-logo.png" alt="日清不动产 Logo" class="logo">
+                    <div class="brand-text">
+                        <h1 class="brand-name">日清不动产</h1>
+                        <p class="brand-name-en">Nisshin Real Estate</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="nav-menu">
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link" data-lang="nav_home">首页</a>
+                    <a href="property-search.html" class="nav-link" data-lang="nav_search">房源搜索</a>
+                    <a href="vr-tour.html" class="nav-link" data-lang="nav_vr">VR看房</a>
+                    <a href="services.html" class="nav-link" data-lang="nav_services">租赁服务</a>
+                    <a href="foreigner-guide.html" class="nav-link" data-lang="nav_guide">外国人指南</a>
+                    <a href="about.html" class="nav-link active" data-lang="nav_about">关于我们</a>
+                </div>
+
+                <div class="nav-actions">
+                    <div class="language-selector">
+                        <button class="lang-btn" id="langToggle">
+                            <span class="flag-icon">🇯🇵</span>
+                            <span class="lang-text">中文</span>
+                            <span class="arrow-icon">▼</span>
+                        </button>
+                        <div class="lang-dropdown" id="langDropdown">
+                            <a href="#" class="lang-option active" data-lang="zh">🇨🇳 中文</a>
+                            <a href="#" class="lang-option" data-lang="ja">🇯🇵 日本語</a>
+                            <a href="#" class="lang-option" data-lang="en">🇺🇸 English</a>
+                            <a href="#" class="lang-option" data-lang="fr">🇫🇷 Français</a>
+                            <a href="#" class="lang-option" data-lang="vi">🇻🇳 Tiếng Việt</a>
+                            <a href="#" class="lang-option" data-lang="ko">🇰🇷 한국어</a>
+                            <a href="#" class="lang-option" data-lang="mn">🇲🇳 Монгол</a>
+                            <a href="#" class="lang-option" data-lang="ms">🇲🇾 Bahasa</a>
+                        </div>
+                    </div>
+                    <button class="contact-btn" data-lang="nav_contact">联系我们</button>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面标题 -->
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html" data-lang="breadcrumb_home">首页</a>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-current" data-lang="breadcrumb_about">关于我们</span>
+            </div>
+            <h1 class="page-title" data-lang="about_title">关于日清不动产</h1>
+            <p class="page-subtitle" data-lang="about_subtitle">让世界成为你的家 - 我们致力于为在日外国人提供最优质的房地产服务</p>
+        </div>
+    </section>
+
+    <!-- 公司概览 -->
+    <section class="company-overview">
+        <div class="container">
+            <div class="overview-content">
+                <div class="company-intro">
+                    <h2 class="section-title" data-lang="overview_title">公司概览</h2>
+                    <div class="intro-text">
+                        <p data-lang="overview_paragraph1">
+                            日清不动产成立于2018年，是一家专注于为在日外国人提供房地产服务的专业机构。我们深刻理解外国人在日本租房过程中面临的语言障碍、文化差异和各种挑战，因此致力于通过创新的服务模式和先进的技术手段，为客户提供最便捷、最贴心的租房体验。
+                        </p>
+                        <p data-lang="overview_paragraph2">
+                            凭借专业团队、8语言支持、VR看房技术和数字化流程，我们已成功帮助超过2000名外国人在日本找到理想住所。我们的使命是打破文化和语言的壁垒，让每一位在日外国人都能轻松、安心地在日本生活。
+                        </p>
+                    </div>
+                    <div class="company-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">2018</div>
+                            <div class="stat-label" data-lang="stat_founded">成立年份</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">2000+</div>
+                            <div class="stat-label" data-lang="stat_clients">服务客户</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label" data-lang="stat_partners">合作伙伴</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">8</div>
+                            <div class="stat-label" data-lang="stat_languages">支持语言</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心理念 -->
+    <section class="core-values">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-lang="values_title">核心理念</h2>
+                <p class="section-subtitle" data-lang="values_subtitle">我们的价值观和服务承诺</p>
+            </div>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🌍</div>
+                    <h3 class="value-title" data-lang="value1_title">多元化包容</h3>
+                    <p class="value-description" data-lang="value1_desc">
+                        尊重不同文化背景，提供符合各种文化习惯的服务，让每位客户都能感受到家的温暖。
+                    </p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3 class="value-title" data-lang="value2_title">诚信透明</h3>
+                    <p class="value-description" data-lang="value2_desc">
+                        所有费用公开透明，无隐藏收费。诚信经营是我们的立身之本，客户的信任是我们最宝贵的财富。
+                    </p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">🚀</div>
+                    <h3 class="value-title" data-lang="value3_title">创新科技</h3>
+                    <p class="value-description" data-lang="value3_desc">
+                        运用VR看房、数字化合同等先进技术，不断优化服务流程，为客户提供更便捷的租房体验。
+                    </p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">💝</div>
+                    <h3 class="value-title" data-lang="value4_title">贴心服务</h3>
+                    <p class="value-description" data-lang="value4_desc">
+                        从找房到入住，提供全方位的生活支持服务，让客户在日本的每一天都安心舒心。
+                    </p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3 class="value-title" data-lang="value5_title">专业精准</h3>
+                    <p class="value-description" data-lang="value5_desc">
+                        深入了解日本房地产市场的特点和外国人的特殊需求，提供最专业、最精准的服务建议。
+                    </p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">🌱</div>
+                    <h3 class="value-title" data-lang="value6_title">共同成长</h3>
+                    <p class="value-description" data-lang="value6_desc">
+                        与客户、合作伙伴共同成长，不断学习改进，为客户创造更大的价值。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 服务优势 -->
+    <section class="service-advantages">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-lang="advantages_title">服务优势</h2>
+                <p class="section-subtitle" data-lang="advantages_subtitle">为什么选择日清不动产？</p>
+            </div>
+
+            <div class="advantages-content">
+                <div class="advantage-item">
+                    <div class="advantage-number">01</div>
+                    <div class="advantage-content">
+                        <h3 class="advantage-title" data-lang="advantage1_title">8语言母语服务</h3>
+                        <p class="advantage-description" data-lang="advantage1_desc">
+                            专业翻译团队提供中文、日语、英语、法语、越南语、韩语、蒙古语、马来语等8种语言的母语服务，确保沟通无障碍。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="advantage-item">
+                    <div class="advantage-number">02</div>
+                    <div class="advantage-content">
+                        <h3 class="advantage-title" data-lang="advantage2_title">保证人免除方案</h3>
+                        <p class="advantage-description" data-lang="advantage2_desc">
+                            与多家知名保证公司合作，为外国人提供灵活的保证人替代方案，解决没有日本保证人的难题。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="advantage-item">
+                    <div class="advantage-number">03</div>
+                    <div class="advantage-content">
+                        <h3 class="advantage-title" data-lang="advantage3_title">VR远程看房</h3>
+                        <p class="advantage-description" data-lang="advantage3_desc">
+                            高清VR设备提供360度全景看房体验，身临其境了解房屋细节，无需实地考察即可做出决定。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="advantage-item">
+                    <div class="advantage-number">04</div>
+                    <div class="advantage-content">
+                        <h3 class="advantage-title" data-lang="advantage4_title">费用优惠30%以上</h3>
+                        <p class="advantage-description" data-lang="advantage4_desc">
+                            通过规模化运营和与房东的长期合作关系，为客户提供比市场平均水平优惠30%以上的中介费用。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="advantage-item">
+                    <div class="advantage-number">05</div>
+                    <div class="advantage-content">
+                        <h3 class="advantage-title" data-lang="advantage5_title">数字化流程</h3>
+                        <p class="advantage-description" data-lang="advantage5_desc">
+                            从申请到签约全程数字化，电子签名、在线支付、文件云存储，让租房过程更加高效便捷。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="advantage-item">
+                    <div class="advantage-number">06</div>
+                    <div class="advantage-content">
+                        <h3 class="advantage-title" data-lang="advantage6_title">全方位生活支持</h3>
+                        <p class="advantage-description" data-lang="advantage6_desc">
+                            不仅提供租房服务，还协助办理银行开户、住民登记、生活设施开通等全套生活支持服务。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 团队介绍 -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-lang="team_title">专业团队</h2>
+                <p class="section-subtitle" data-lang="team_subtitle">认识我们的核心团队成员</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="images/team/ceo.jpg" alt="田中一郎" loading="lazy">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">田中一郎</h3>
+                        <p class="member-position" data-lang="team_ceo_position">创始人 & CEO</p>
+                        <div class="member-languages">
+                            <span class="lang-badge">🇯🇵 日本語</span>
+                            <span class="lang-badge">🇨🇳 中文</span>
+                            <span class="lang-badge">🇺🇸 English</span>
+                        </div>
+                        <p class="member-bio" data-lang="team_ceo_bio">
+                            拥有15年房地产从业经验，曾在多家知名不动产公司担任高管。深刻了解在日外国人的租房需求，创立日清不动产致力于为外国人提供更好的租房体验。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="images/team/coo.jpg" alt="李明华" loading="lazy">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">李明华</h3>
+                        <p class="member-position" data-lang="team_coo_position">运营总监</p>
+                        <div class="member-languages">
+                            <span class="lang-badge">🇨🇳 中文</span>
+                            <span class="lang-badge">🇯🇵 日本語</span>
+                            <span class="lang-badge">🇺🇸 English</span>
+                        </div>
+                        <p class="member-bio" data-lang="team_coo_bio">
+                            在日本生活10年，亲身体验过外国人在日本租房的各种困难。专注于优化服务流程，提升客户体验，确保每位客户都能享受到最优质的服务。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="images/team/tech-director.jpg" alt="佐藤健太" loading="lazy">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">佐藤健太</h3>
+                        <p class="member-position" data-lang="team_tech_position">技术总监</p>
+                        <div class="member-languages">
+                            <span class="lang-badge">🇯🇵 日本語</span>
+                            <span class="lang-badge">🇺🇸 English</span>
+                        </div>
+                        <p class="member-bio" data-lang="team_tech_bio">
+                            前Google工程师，专注于房地产科技(FinTech)开发。负责公司数字化转型，开发VR看房系统和在线签约平台，让科技为房地产服务赋能。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="images/team/marketing.jpg" alt="Marie Dubois" loading="lazy">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Marie Dubois</h3>
+                        <p class="member-position" data-lang="team_marketing_position">市场总监</p>
+                        <div class="member-languages">
+                            <span class="lang-badge">🇫🇷 Français</span>
+                            <span class="lang-badge">🇺🇸 English</span>
+                            <span class="lang-badge">🇯🇵 日本語</span>
+                        </div>
+                        <p class="member-bio" data-lang="team_marketing_bio">
+                            国际市场营销专家，在亚太地区拥有丰富经验。负责公司品牌建设和国际市场推广，让更多在日外国人了解并选择我们的服务。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="images/team/customer-service.jpg" alt="Trần Thị Mai" loading="lazy">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Trần Thị Mai</h3>
+                        <p class="member-position" data-lang="team_service_position">客户服务总监</p>
+                        <div class="member-languages">
+                            <span class="lang-badge">🇻🇳 Tiếng Việt</span>
+                            <span class="lang-badge">🇯🇵 日本語</span>
+                            <span class="lang-badge">🇺🇸 English</span>
+                        </div>
+                        <p class="member-bio" data-lang="team_service_bio">
+                            从日本顶尖大学毕业，曾在知名咨询公司工作。深刻理解外国人在日本的生活需求，专注于提供最贴心的客户服务和生活支持。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="images/team/legal.jpg" alt="김민준" loading="lazy">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">김민준</h3>
+                        <p class="member-position" data-lang="team_legal_position">法务顾问</p>
+                        <div class="member-languages">
+                            <span class="lang-badge">🇰🇷 한국어</span>
+                            <span class="lang-badge">🇯🇵 日本語</span>
+                            <span class="lang-badge">🇺🇸 English</span>
+                        </div>
+                        <p class="member-bio" data-lang="team_legal_bio">
+                            日本法科大学毕业，专门从事房地产法律服务。确保所有合同条款合法合规，为客户提供专业的法律咨询和风险防范建议。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-culture">
+                <h3 class="culture-title" data-lang="culture_title">团队文化</h3>
+                <div class="culture-grid">
+                    <div class="culture-item">
+                        <div class="culture-icon">🎯</div>
+                        <h4 data-lang="culture1_title">客户至上</h4>
+                        <p data-lang="culture1_desc">以客户需求为中心，持续提升服务质量</p>
+                    </div>
+                    <div class="culture-item">
+                        <div class="culture-icon">🤝</div>
+                        <h4 data-lang="culture2_title">团队协作</h4>
+                        <p data-lang="culture2_desc">跨部门合作，为客户提供一体化服务</p>
+                    </div>
+                    <div class="culture-item">
+                        <div class="culture-icon">📚</div>
+                        <h4 data-lang="culture3_title">持续学习</h4>
+                        <p data-lang="culture3_desc">定期培训，不断提升专业能力</p>
+                    </div>
+                    <div class="culture-item">
+                        <div class="culture-icon">💡</div>
+                        <h4 data-lang="culture4_title">创新思维</h4>
+                        <p data-lang="culture4_desc">鼓励创新，用新方法解决老问题</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 合作伙伴 -->
+    <section class="partners-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-lang="partners_title">合作伙伴</h2>
+                <p class="section-subtitle" data-lang="partners_subtitle">与我们携手共进的优质伙伴</p>
+            </div>
+
+            <div class="partners-categories">
+                <div class="partner-category">
+                    <h3 class="category-title" data-lang="partners_category1_title">房地产合作伙伴</h3>
+                    <div class="partners-grid">
+                        <div class="partner-item">
+                            <div class="partner-logo">
+                                <img src="images/partners/suumo.png" alt="SUUMO" loading="lazy">
+                            </div>
+                            <div class="partner-name">SUUMO</div>
+                        </div>
+                        <div class="partner-item">
+                            <div class="partner-logo">
+                                <img src="images/partners/homes.png" alt="Homes" loading="lazy">
+                            </div>
+                            <div class="partner-name">Homes</div>
+                        </div>
+                        <div class="partner-item">
+                            <div class="partner-logo">
+                                <img src="images/partners/athome.png" alt="at home" loading="lazy">
+                            </div>
+                            <div class="partner-name">at home</div>
+                        </div>
+                        <div class="partner-item">
+                            <div class="partner-logo">
+                                <img src="images/partners/lifull.png" alt="LIFULL HOME'S" loading="lazy">
+                            </div>
+                            <div class="partner-name">LIFULL HOME'S</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="partner-category">
+                    <h3 class="category-title" data-lang="partners_category2_title">金融机构</h3>
+                    <div class="partners-grid">
+                        <div class="partner-item">
+                            <div class="partner-logo">
+                                <img src="images/partners/mizuho.png" alt="みずほ銀行" loading="lazy">
+                            </div>
+                            <div class="partner-name">みずほ銀行</div>
+                        </div>
+                        <div class="partner-item">
+                            <div class="partner-logo">
+                                <img src="images/partners/sumitomo.png" alt="三井住友銀行" loading="lazy">
+                            </div>
+                            <div class="partner-name">三井住友銀行</div>
+                        </div>
+                        <div class="partner-item">
+                            <div class="partner-logo">
+                                <img src="images/partners/mitsubishi.png" alt="三菱UFJ銀行" loading="lazy">
+                            </div>
+                            <div class="partner-name">三菱UFJ銀行</div>
+                        </div>
+                        <div class="partner-item">
+                            <div class="partner-logo">
+                                <img src="images/partners/resona.png" alt="りそな銀行" loading="lazy">
+                            </div>
+                            <div class="partner-name">りそな銀行</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="partner-category">
+                    <h3 class="category-title" data-lang="partners_category3_title">保证公司</h3>
+                    <div class="partners-grid">
+                        <div class="partner-item">
+                            <div class="partner-logo">
+                                <img src="images/partners/cbr.png" alt="全国保証機構" loading="lazy">
+                            </div>
+                            <div class="partner-name">全国保証機構</div>
+                        </div>
+                        <div class="partner-item">
+                            <div class="partner-logo">
+                                <img src="images/partners/leopalace.png" alt="レオパレス21" loading="lazy">
+                            </div>
+                            <div class="partner-name">レオパレス21</div>
+                        </div>
+                        <div class="partner-item">
+                            <div class="partner-logo">
+                                <img src="images/partners/ur.png" alt="UR賃貸住宅" loading="lazy">
+                            </div>
+                            <div class="partner-name">UR賃貸住宅</div>
+                        </div>
+                        <div class="partner-item">
+                            <div class="partner-logo">
+                                <img src="images/partners/ikko.png" alt="イッコー" loading="lazy">
+                            </div>
+                            <div class="partner-name">イッコー</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="partner-category">
+                    <h3 class="category-title" data-lang="partners_category4_title">生活服务</h3>
+                    <div class="partners-grid">
+                        <div class="partner-item">
+                            <div class="partner-logo">
+                                <img src="images/partners/yamato.png" alt="ヤマト運輸" loading="lazy">
+                            </div>
+                            <div class="partner-name">ヤマト運輸</div>
+                        </div>
+                        <div class="partner-item">
+                            <div class="partner-logo">
+                                <img src="images/partners/tokyo-gas.png" alt="東京ガス" loading="lazy">
+                            </div>
+                            <div class="partner-name">東京ガス</div>
+                        </div>
+                        <div class="partner-item">
+                            <div class="partner-logo">
+                                <img src="images/partners/tepco.png" alt="東京電力" loading="lazy">
+                            </div>
+                            <div class="partner-name">東京電力</div>
+                        </div>
+                        <div class="partner-item">
+                            <div class="partner-logo">
+                                <img src="images/partners/bvjm.png" alt="日本水道" loading="lazy">
+                            </div>
+                            <div class="partner-name">日本水道</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 公司资质 -->
+    <section class="certifications-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-lang="certifications_title">公司资质</h2>
+                <p class="section-subtitle" data-lang="certifications_subtitle">我们的专业认证和行业认可</p>
+            </div>
+
+            <div class="certifications-content">
+                <div class="certification-item">
+                    <div class="certification-icon">📜</div>
+                    <div class="certification-info">
+                        <h3 class="certification-title" data-lang="cert1_title">宅地建物取引士</h3>
+                        <p class="certification-description" data-lang="cert1_desc">
+                            公司拥有多名国家认证的宅地建物取引士，确保所有房地产交易合法合规。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="certification-item">
+                    <div class="certification-icon">🏢</div>
+                    <div class="certification-info">
+                        <h3 class="certification-title" data-lang="cert2_title">東京都知事免許</h3>
+                        <p class="certification-description" data-lang="cert2_desc">
+                            获得東京都知事颁发的房地产经营许可证，资质编号：(1)第123456号。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="certification-item">
+                    <div class="certification-icon">🛡️</div>
+                    <div class="certification-info">
+                        <h3 class="certification-title" data-lang="cert3_title">公益社団法人会員</h3>
+                        <p class="certification-description" data-lang="cert3_desc">
+                            日本房地产协会会员，遵守行业最高标准和道德规范。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="certification-item">
+                    <div class="certification-icon">🌐</div>
+                    <div class="certification-info">
+                        <h3 class="certification-title" data-lang="cert4_title">ISO9001認証</h3>
+                        <p class="certification-description" data-lang="cert4_desc">
+                            通过ISO9001质量管理体系认证，确保服务质量的持续改进。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="certification-item">
+                    <div class="certification-icon">🏆</div>
+                    <div class="certification-info">
+                        <h3 class="certification-title" data-lang="cert5_title">外国人支援認定企業</h3>
+                        <p class="certification-description" data-lang="cert5_desc">
+                            获得政府外国人支援认定企业资格，为外国人提供专业可靠的服务。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="certification-item">
+                    <div class="certification-icon">💼</div>
+                    <div class="certification-info">
+                        <h3 class="certification-title" data-lang="cert6_title">海外不動産協会会員</h3>
+                        <p class="certification-description" data-lang="cert6_desc">
+                            海外不动产协会会员，与国际房地产市场保持紧密联系。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 客户评价 -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-lang="testimonials_title">客户评价</h2>
+                <p class="section-subtitle" data-lang="testimonials_subtitle">听听客户怎么说</p>
+            </div>
+
+            <div class="testimonials-carousel">
+                <div class="testimonial-item active">
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            <p data-lang="testimonial1_text">
+                                "作为第一次来日本工作的外国人，对租房流程完全不了解。日清不动产的中文服务让我非常放心，从找房到签约全程都有专业翻译陪同。VR看房技术让我在国内就能提前了解房屋情况，大大节省了时间。现在已经在东京住了一个月，一切都很满意！"
+                            </p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">👨‍💼</div>
+                            <div class="author-info">
+                                <div class="author-name">王先生</div>
+                                <div class="author-title" data-lang="testimonial1_role">IT工程师，中国</div>
+                            </div>
+                            <div class="testimonial-rating">
+                                <span class="star">⭐</span>
+                                <span class="star">⭐</span>
+                                <span class="star">⭐</span>
+                                <span class="star">⭐</span>
+                                <span class="star">⭐</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            <p data-lang="testimonial2_text">
+                                "The service at Nisshin Real Estate exceeded my expectations. As a foreigner who doesn't speak Japanese well, the multilingual support was invaluable. They helped me understand all the contract terms and found a beautiful apartment in Shibuya that fits my budget. The digital contract process was very convenient and fast."
+                            </p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">👩‍🎨</div>
+                            <div class="author-info">
+                                <div class="author-name">Marie Dubois</div>
+                                <div class="author-title" data-lang="testimonial2_role">设计师，法国</div>
+                            </div>
+                            <div class="testimonial-rating">
+                                <span class="star">⭐</span>
+                                <span class="star">⭐</span>
+                                <span class="star">⭐</span>
+                                <span class="star">⭐</span>
+                                <span class="star">⭐</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            <p data-lang="testimonial3_text">
+                                "留学生租房最大的问题就是保证人，日清不动产帮我解决了这个难题。他们的保证人免除方案让我不需要找日本朋友做保证人，而且费用也很合理。工作人员还耐心教我各种生活手续，让我在日本的留学生活顺利开始。"
+                            </p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">👩‍🎓</div>
+                            <div class="author-info">
+                                <div class="author-name">Trần Thị Mai</div>
+                                <div class="author-title" data-lang="testimonial3_role">留学生，越南</div>
+                            </div>
+                            <div class="testimonial-rating">
+                                <span class="star">⭐</span>
+                                <span class="star">⭐</span>
+                                <span class="star">⭐</span>
+                                <span class="star">⭐</span>
+                                <span class="star">⭐</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-controls">
+                    <button class="testimonial-prev" id="prevTestimonial">
+                        <span class="arrow-icon">‹</span>
+                    </button>
+                    <div class="testimonial-dots">
+                        <button class="dot active" data-slide="0"></button>
+                        <button class="dot" data-slide="1"></button>
+                        <button class="dot" data-slide="2"></button>
+                    </div>
+                    <button class="testimonial-next" id="nextTestimonial">
+                        <span class="arrow-icon">›</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-lang="contact_title">联系我们</h2>
+                <p class="section-subtitle" data-lang="contact_subtitle">我们随时为您提供专业的房地产咨询服务</p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h3 data-lang="contact_address_title">办公地址</h3>
+                            <p data-lang="contact_address">东京都涩谷区道玄坂1-2-3 ABC大厦8F</p>
+                            <p data-lang="contact_access">JR涩谷站步行5分钟，地铁银座线、半藏门线表参道站步行3分钟</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <h3 data-lang="contact_phone_title">联系电话</h3>
+                            <p class="phone-number">03-1234-5678</p>
+                            <p data-lang="contact_hours">营业时间：9:00-21:00 全年无休</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-details">
+                            <h3 data-lang="contact_email_title">邮箱地址</h3>
+                            <p><a href="mailto:info@nisshin-real-estate.jp">info@nisshin-real-estate.jp</a></p>
+                            <p data-lang="contact_email_response">我们会在24小时内回复您的邮件</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">💬</div>
+                        <div class="contact-details">
+                            <h3 data-lang="contact_online_title">在线咨询</h3>
+                            <p data-lang="contact_online_wechat">微信：NisshinRealEstate</p>
+                            <p data-lang="contact_online_line">LINE：@nisshin-realestate</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3 data-lang="contact_form_title">在线留言</h3>
+                    <form id="contactForm" class="form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label data-lang="form_name_label">姓名 *</label>
+                                <input type="text" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label data-lang="form_phone_label">电话 *</label>
+                                <input type="tel" name="phone" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label data-lang="form_email_label">邮箱 *</label>
+                                <input type="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label data-lang="form_language_label">偏好语言</label>
+                                <select name="language">
+                                    <option value="zh">中文</option>
+                                    <option value="ja">日本語</option>
+                                    <option value="en">English</option>
+                                    <option value="fr">Français</option>
+                                    <option value="vi">Tiếng Việt</option>
+                                    <option value="ko">한국어</option>
+                                    <option value="mn">Монгол</option>
+                                    <option value="ms">Bahasa</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label data-lang="form_subject_label">咨询主题</label>
+                            <select name="subject">
+                                <option value="" data-lang="form_subject_select">请选择咨询主题</option>
+                                <option value="rental" data-lang="form_subject_rental">租房咨询</option>
+                                <option value="vr" data-lang="form_subject_vr">VR看房预约</option>
+                                <option value="document" data-lang="form_subject_document">文件准备指导</option>
+                                <option value="partner" data-lang="form_subject_partner">合作洽谈</option>
+                                <option value="other" data-lang="form_subject_other">其他</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label data-lang="form_message_label">留言内容 *</label>
+                            <textarea name="message" rows="5" required placeholder="请详细描述您的需求..."></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" data-lang="form_submit">发送留言</button>
+                            <button type="reset" class="btn btn-secondary" data-lang="form_reset">重置</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title" data-lang="about_cta_title">准备好开始您的日本租房之旅了吗？</h2>
+                <p class="cta-subtitle" data-lang="about_cta_subtitle">专业团队为您服务，让租房变得简单轻松</p>
+                <div class="cta-buttons">
+                    <a href="property-search.html" class="btn btn-primary" data-lang="cta_search">开始找房</a>
+                    <a href="services.html" class="btn btn-secondary" data-lang="cta_services">了解服务</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/nisshin-logo-white.png" alt="日清不动产 Logo">
+                        <h3>日清不动产</h3>
+                        <p data-lang="footer_slogan">让世界成为你的家</p>
+                    </div>
+                    <div class="footer-contact">
+                        <h4 data-lang="footer_contact_title">联系方式</h4>
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <span data-lang="footer_address">东京都涩谷区道玄坂1-2-3 ABC大厦8F</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <span data-lang="footer_phone">03-1234-5678</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">✉️</span>
+                            <span data-lang="footer_email">info@nisshin-real-estate.jp</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4 data-lang="footer_services_title">服务内容</h4>
+                    <ul class="footer-links">
+                        <li><a href="property-search.html" data-lang="footer_service1">房屋搜索</a></li>
+                        <li><a href="vr-tour.html" data-lang="footer_service2">VR看房</a></li>
+                        <li><a href="services.html" data-lang="footer_service3">租赁服务</a></li>
+                        <li><a href="#" data-lang="footer_service4">搬家服务</a></li>
+                        <li><a href="#" data-lang="footer_service5">生活支持</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 data-lang="footer_guide_title">外国人指南</h4>
+                    <ul class="footer-links">
+                        <li><a href="foreigner-guide.html" data-lang="footer_guide1">租房流程</a></li>
+                        <li><a href="#" data-lang="footer_guide2">费用说明</a></li>
+                        <li><a href="#" data-lang="footer_guide3">文件准备</a></li>
+                        <li><a href="#" data-lang="footer_guide4">生活指南</a></li>
+                        <li><a href="#" data-lang="footer_guide5">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 data-lang="footer_company_title">公司信息</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html" data-lang="footer_about">关于我们</a></li>
+                        <li><a href="#" data-lang="footer_team">团队介绍</a></li>
+                        <li><a href="#" data-lang="footer_license">营业执照</a></li>
+                        <li><a href="#" data-lang="footer_privacy">隐私政策</a></li>
+                        <li><a href="#" data-lang="footer_terms">使用条款</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <p>&copy; 2024 日清不动产 Nisshin Real Estate. All rights reserved.</p>
+                </div>
+                <div class="footer-bottom-right">
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="微信">💬</a>
+                        <a href="#" class="social-link" aria-label="LINE">📱</a>
+                        <a href="#" class="social-link" aria-label="微博">🌐</a>
+                        <a href="#" class="social-link" aria-label="Facebook">📘</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/about.js"></script>
+</body>
+</html>

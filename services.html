@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>租赁服务 | 日清不动产 Nisshin Real Estate</title>
+    <meta name="description" content="日清不动产提供专为外国人设计的全方位租赁服务，包括多语言支持、VR看房、数字化合同、保证人免除等服务，让在日本租房变得简单轻松。">
+    <meta name="keywords" content="日本租房,外国人租房,东京租房,不动产中介,租赁服务,VR看房,数字化合同">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="租赁服务 | 日清不动产 Nisshin Real Estate">
+    <meta property="og:description" content="专为外国人设计的全方位租赁服务，多语言支持，VR看房，数字化合同，让在日本租房变得简单轻松。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" href="https://nisshin-real-estate.jp/services.html">
+    <meta property="og:image" href="https://nisshin-real-estate.jp/images/og-services.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/services.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Noto+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "房屋租赁服务",
+      "description": "专为在日外国人提供的全方位房屋租赁服务",
+      "provider": {
+        "@type": "Organization",
+        "name": "日清不动产",
+        "url": "https://nisshin-real-estate.jp"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "日本"
+      },
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "在日外国人"
+      }
+    }
+    </script>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <img src="images/nisshin-logo.png" alt="日清不动产 Logo" class="logo">
+                    <div class="brand-text">
+                        <h1 class="brand-name">日清不动产</h1>
+                        <p class="brand-name-en">Nisshin Real Estate</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="nav-menu">
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link" data-lang="nav_home">首页</a>
+                    <a href="property-search.html" class="nav-link" data-lang="nav_search">房源搜索</a>
+                    <a href="vr-tour.html" class="nav-link" data-lang="nav_vr">VR看房</a>
+                    <a href="services.html" class="nav-link active" data-lang="nav_services">租赁服务</a>
+                    <a href="foreigner-guide.html" class="nav-link" data-lang="nav_guide">外国人指南</a>
+                    <a href="about.html" class="nav-link" data-lang="nav_about">关于我们</a>
+                </div>
+
+                <div class="nav-actions">
+                    <div class="language-selector">
+                        <button class="lang-btn" id="langToggle">
+                            <span class="flag-icon">🇯🇵</span>
+                            <span class="lang-text">中文</span>
+                            <span class="arrow-icon">▼</span>
+                        </button>
+                        <div class="lang-dropdown" id="langDropdown">
+                            <a href="#" class="lang-option active" data-lang="zh">🇨🇳 中文</a>
+                            <a href="#" class="lang-option" data-lang="ja">🇯🇵 日本語</a>
+                            <a href="#" class="lang-option" data-lang="en">🇺🇸 English</a>
+                            <a href="#" class="lang-option" data-lang="fr">🇫🇷 Français</a>
+                            <a href="#" class="lang-option" data-lang="vi">🇻🇳 Tiếng Việt</a>
+                            <a href="#" class="lang-option" data-lang="ko">🇰🇷 한국어</a>
+                            <a href="#" class="lang-option" data-lang="mn">🇲🇳 Монгол</a>
+                            <a href="#" class="lang-option" data-lang="ms">🇲🇾 Bahasa</a>
+                        </div>
+                    </div>
+                    <button class="contact-btn" data-lang="nav_contact">联系我们</button>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面标题 -->
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html" data-lang="breadcrumb_home">首页</a>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-current" data-lang="breadcrumb_services">租赁服务</span>
+            </div>
+            <h1 class="page-title" data-lang="services_title">全方位租赁服务</h1>
+            <p class="page-subtitle" data-lang="services_subtitle">专为外国人设计的贴心租房体验，从找房到入住，全程专业支持</p>
+        </div>
+    </section>
+
+    <!-- 服务概览 -->
+    <section class="services-overview">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-lang="overview_title">为什么选择日清不动产？</h2>
+                <p class="section-subtitle" data-lang="overview_subtitle">我们了解外国人在日本租房的痛点，提供针对性的解决方案</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card featured">
+                    <div class="service-icon">🌍</div>
+                    <h3 class="service-title" data-lang="service_multilingual_title">8语言支持</h3>
+                    <p class="service-description" data-lang="service_multilingual_desc">全程母语服务，包含中文、英语、法语、越南语、韩语、蒙古语、马来语等</p>
+                    <ul class="service-features">
+                        <li data-lang="service_multilingual_feature1">专业翻译人员</li>
+                        <li data-lang="service_multilingual_feature2">双语合同文件</li>
+                        <li data-lang="service_multilingual_feature3">24小时多语言客服</li>
+                    </ul>
+                </div>
+
+                <div class="service-card featured">
+                    <div class="service-icon">🥽</div>
+                    <h3 class="service-title" data-lang="service_vr_title">VR远程看房</h3>
+                    <p class="service-description" data-lang="service_vr_desc">身临其境的360度全景看房体验，无需实地考察即可了解房屋细节</p>
+                    <ul class="service-features">
+                        <li data-lang="service_vr_feature1">高清VR设备</li>
+                        <li data-lang="service_vr_feature2">实时在线导览</li>
+                        <li data-lang="service_vr_feature3">录制回看功能</li>
+                    </ul>
+                </div>
+
+                <div class="service-card featured">
+                    <div class="service-icon">📱</div>
+                    <h3 class="service-title" data-lang="service_digital_title">数字化流程</h3>
+                    <p class="service-description" data-lang="service_digital_desc">从申请到签约全程数字化，节省时间提高效率</p>
+                    <ul class="service-features">
+                        <li data-lang="service_digital_feature1">在线申请系统</li>
+                        <li data-lang="service_digital_feature2">电子签名合同</li>
+                        <li data-lang="service_digital_feature3">移动支付支持</li>
+                    </ul>
+                </div>
+
+                <div class="service-card featured">
+                    <div class="service-icon">🛡️</div>
+                    <h3 class="service-title" data-lang="service_guarantor_title">保证人免除</h3>
+                    <p class="service-description" data-lang="service_guarantor_desc">与多家保证公司合作，为外国人提供保证人替代方案</p>
+                    <ul class="service-features">
+                        <li data-lang="service_guarantor_feature1">多种保证方案</li>
+                        <li data-lang="service_guarantor_feature2">优惠保证费用</li>
+                        <li data-lang="service_guarantor_feature3">快速审批流程</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3 class="service-title" data-lang="service_living_title">生活支持</h3>
+                    <p class="service-description" data-lang="service_living_desc">提供搬家、家具配置、生活必需品采购等一站式生活服务</p>
+                    <ul class="service-features">
+                        <li data-lang="service_living_feature1">搬家服务安排</li>
+                        <li data-lang="service_living_feature2">家具家电租赁</li>
+                        <li data-lang="service_living_feature3">生活设施介绍</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💬</div>
+                    <h3 class="service-title" data-lang="service_consultation_title">免费咨询</h3>
+                    <p class="service-description" data-lang="service_consultation_desc">专业顾问提供租房相关的一切咨询服务</p>
+                    <ul class="service-features">
+                        <li data-lang="service_consultation_feature1">租房流程讲解</li>
+                        <li data-lang="service_consultation_feature2">合同条款解读</li>
+                        <li data-lang="service_consultation_feature3">周边环境介绍</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 租赁流程 -->
+    <section class="rental-process">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-lang="process_title">租赁流程</h2>
+                <p class="section-subtitle" data-lang="process_subtitle">简单透明的6步租赁流程，让您轻松在日本找到理想住所</p>
+            </div>
+
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 class="step-title" data-lang="step1_title">初步咨询</h3>
+                        <p class="step-description" data-lang="step1_desc">了解您的需求，制定找房策略，准备必要文件清单</p>
+                        <div class="step-duration">
+                            <span class="duration-label" data-lang="duration_label">预计时间：</span>
+                            <span class="duration-value">30分钟</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="step-title" data-lang="step2_title">房源搜索</h3>
+                        <p class="step-description" data-lang="step2_desc">根据预算和需求筛选合适的房源，安排VR或实地看房</p>
+                        <div class="step-duration">
+                            <span class="duration-label" data-lang="duration_label">预计时间：</span>
+                            <span class="duration-value">1-3天</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 class="step-title" data-lang="step3_title">申请提交</h3>
+                        <p class="step-description" data-lang="step3_desc">准备申请材料，填写申请表格，提交给房东审核</p>
+                        <div class="step-duration">
+                            <span class="duration-label" data-lang="duration_label">预计时间：</span>
+                            <span class="duration-value">1-2天</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3 class="step-title" data-lang="step4_title">合同签约</h3>
+                        <p class="step-description" data-lang="step4_desc">审核通过后签署租赁合同，支付初期费用</p>
+                        <div class="step-duration">
+                            <span class="duration-label" data-lang="duration_label">预计时间：</span>
+                            <span class="duration-value">1天</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3 class="step-title" data-lang="step5_title">入住准备</h3>
+                        <p class="step-description" data-lang="step5_desc">安排入住交接，设置生活设施，开通水电煤气</p>
+                        <div class="step-duration">
+                            <span class="duration-label" data-lang="duration_label">预计时间：</span>
+                            <span class="duration-value">入住当天</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h3 class="step-title" data-lang="step6_title">售后支持</h3>
+                        <p class="step-description" data-lang="step6_desc">入住后持续的生活支持，解决各种租房相关问题</p>
+                        <div class="step-duration">
+                            <span class="duration-label" data-lang="duration_label">预计时间：</span>
+                            <span class="duration-value">租赁期间全程</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 费用说明 -->
+    <section class="fee-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-lang="fee_title">费用说明</h2>
+                <p class="section-subtitle" data-lang="fee_subtitle">透明收费，无隐藏费用，让您清楚了解每一笔支出</p>
+            </div>
+
+            <div class="fee-comparison">
+                <div class="fee-table">
+                    <h3 class="table-title" data-lang="fee_traditional_title">传统中介费用</h3>
+                    <div class="fee-items">
+                        <div class="fee-item">
+                            <span class="fee-name" data-lang="fee_traditional_broker">中介费</span>
+                            <span class="fee-value">0.5-1个月房租</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-name" data-lang="fee_traditional_guarantee">保证费</span>
+                            <span class="fee-value">50-100%房租</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-name" data-lang="fee_traditional_deposit">押金</span>
+                            <span class="fee-value">1-2个月房租</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-name" data-lang="fee_traditional_key">礼金</span>
+                            <span class="fee-value">1-2个月房租</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-name" data-lang="fee_tradential_insurance">火灾保险</span>
+                            <span class="fee-value">15,000-20,000日元</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-name" data-lang="fee_traditional_cleaning">清扫费</span>
+                            <span class="fee-value">30,000-60,000日元</span>
+                        </div>
+                    </div>
+                    <div class="fee-total">
+                        <span class="total-label" data-lang="fee_total_label">初期费用合计</span>
+                        <span class="total-value">4-7个月房租</span>
+                    </div>
+                </div>
+
+                <div class="fee-table highlighted">
+                    <div class="best-value-badge" data-lang="fee_best_value">最优价值</div>
+                    <h3 class="table-title" data-lang="fee_nisshin_title">日清不动产费用</h3>
+                    <div class="fee-items">
+                        <div class="fee-item discount">
+                            <span class="fee-name" data-lang="fee_nisshin_broker">中介费</span>
+                            <span class="fee-value">0.3个月房租</span>
+                            <span class="discount-badge" data-lang="fee_discount">30%优惠</span>
+                        </div>
+                        <div class="fee-item discount">
+                            <span class="fee-name" data-lang="fee_nisshin_guarantee">保证费</span>
+                            <span class="fee-value">30-50%房租</span>
+                            <span class="discount-badge" data-lang="fee_discount">优惠费率</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-name" data-lang="fee_nisshin_deposit">押金</span>
+                            <span class="fee-value">1个月房租</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-name" data-lang="fee_nisshin_key">礼金</span>
+                            <span class="fee-value">0-1个月房租</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-name" data-lang="fee_nisshin_insurance">火灾保险</span>
+                            <span class="fee-value">15,000日元</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-name" data-lang="fee_nisshin_cleaning">清扫费</span>
+                            <span class="fee-value">20,000-40,000日元</span>
+                        </div>
+                    </div>
+                    <div class="fee-total">
+                        <span class="total-label" data-lang="fee_total_label">初期费用合计</span>
+                        <span class="total-value">2.3-3.3个月房租</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fee-note">
+                <p data-lang="fee_note_text">* 费用根据具体房源和条件可能有所变动，详细信息请咨询我们的专业顾问</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 外国人专门服务 -->
+    <section class="foreigner-services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-lang="foreigner_title">外国人专门服务</h2>
+                <p class="section-subtitle" data-lang="foreigner_subtitle">理解外国人在日本租房的特殊需求，提供贴心的定制化服务</p>
+            </div>
+
+            <div class="foreigner-features">
+                <div class="feature-row">
+                    <div class="feature-icon-large">📋</div>
+                    <div class="feature-content">
+                        <h3 class="feature-title" data-lang="foreigner_docs_title">签证和文件支持</h3>
+                        <p class="feature-description" data-lang="foreigner_docs_desc">协助准备在留卡、护照、收入证明等必要文件，指导填写各种申请表格</p>
+                        <ul class="feature-list">
+                            <li data-lang="foreigner_docs_item1">在留资格确认和更新支持</li>
+                            <li data-lang="foreigner_docs_item2">收入证明文件指导</li>
+                            <li data-lang="foreigner_docs_item3">紧急联系人设置协助</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature-row reverse">
+                    <div class="feature-icon-large">🏦</div>
+                    <div class="feature-content">
+                        <h3 class="feature-title" data-lang="foreigner_bank_title">银行开户支持</h3>
+                        <p class="feature-description" data-lang="foreigner_bank_desc">协助开设日本银行账户，设置自动转账，解决租金支付问题</p>
+                        <ul class="feature-list">
+                            <li data-lang="foreigner_bank_item1">银行选择建议</li>
+                            <li data-lang="foreigner_bank_item2">开户文件准备</li>
+                            <li data-lang="foreigner_bank_item3">自动转账设置</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature-row">
+                    <div class="feature-icon-large">💳</div>
+                    <div class="feature-content">
+                        <h3 class="feature-title" data-lang="foreigner_payment_title">多样化支付方式</h3>
+                        <p class="feature-description" data-lang="foreigner_payment_desc">支持国际信用卡、海外银行转账等多种支付方式</p>
+                        <ul class="feature-list">
+                            <li data-lang="foreigner_payment_item1">国际信用卡支付</li>
+                            <li data-lang="foreigner_payment_item2">海外银行转账</li>
+                            <li data-lang="foreigner_payment_item3">第三方支付平台</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature-row reverse">
+                    <div class="feature-icon-large">🏥</div>
+                    <div class="feature-content">
+                        <h3 class="feature-title" data-lang="foreigner_life_title">生活服务介绍</h3>
+                        <p class="feature-description" data-lang="foreigner_life_desc">介绍日本的医疗、教育、交通等生活基础设施，协助办理各种手续</p>
+                        <ul class="feature-list">
+                            <li data-lang="foreigner_life_item1">国民健康保险加入</li>
+                            <li data-lang="foreigner_life_item2">市政服务注册</li>
+                            <li data-lang="foreigner_life_item3">生活垃圾分类指导</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 成功案例 -->
+    <section class="success-stories">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-lang="stories_title">成功案例</h2>
+                <p class="section-subtitle" data-lang="stories_subtitle">听听我们的客户怎么说</p>
+            </div>
+
+            <div class="stories-grid">
+                <div class="story-card">
+                    <div class="story-header">
+                        <div class="customer-info">
+                            <div class="customer-avatar">🇨🇳</div>
+                            <div class="customer-details">
+                                <h4 class="customer-name">李先生</h4>
+                                <p class="customer-role">IT工程师，中国</p>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <span class="star">⭐</span>
+                            <span class="star">⭐</span>
+                            <span class="star">⭐</span>
+                            <span class="star">⭐</span>
+                            <span class="star">⭐</span>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <p>"作为第一次来日本工作的外国人，对租房流程完全不了解。日清不动产的中文服务让我非常放心，从找房到签约全程都有专业翻译陪同。VR看房技术让我在国内就能提前了解房屋情况，大大节省了时间。现在已经在东京住了一个月，一切都很满意！"</p>
+                    </div>
+                    <div class="story-property">
+                        <span class="property-tag">东京都港区</span>
+                        <span class="property-type">1LDK</span>
+                        <span class="property-price">12万円/月</span>
+                    </div>
+                </div>
+
+                <div class="story-card">
+                    <div class="story-header">
+                        <div class="customer-info">
+                            <div class="customer-avatar">🇫🇷</div>
+                            <div class="customer-details">
+                                <h4 class="customer-name">Marie Dubois</h4>
+                                <p class="customer-role">设计师，法国</p>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <span class="star">⭐</span>
+                            <span class="star">⭐</span>
+                            <span class="star">⭐</span>
+                            <span class="star">⭐</span>
+                            <span class="star">⭐</span>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <p>"The service at Nisshin Real Estate exceeded my expectations. As a foreigner who doesn't speak Japanese well, the multilingual support was invaluable. They helped me understand all the contract terms and found a beautiful apartment in Shibuya that fits my budget. The digital contract process was very convenient and fast."</p>
+                    </div>
+                    <div class="story-property">
+                        <span class="property-tag">东京都涩谷区</span>
+                        <span class="property-type">1K</span>
+                        <span class="property-price">9.8万円/月</span>
+                    </div>
+                </div>
+
+                <div class="story-card">
+                    <div class="story-header">
+                        <div class="customer-info">
+                            <div class="customer-avatar">🇻🇳</div>
+                            <div class="customer-details">
+                                <h4 class="customer-name">Trần Thị Mai</h4>
+                                <p class="customer-role">留学生，越南</p>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <span class="star">⭐</span>
+                            <span class="star">⭐</span>
+                            <span class="star">⭐</span>
+                            <span class="star">⭐</span>
+                            <span class="star">⭐</span>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <p>"留学生租房最大的问题就是保证人，日清不动产帮我解决了这个难题。他们的保证人免除方案让我不需要找日本朋友做保证人，而且费用也很合理。工作人员还耐心教我各种生活手续，让我在日本的留学生活顺利开始。"</p>
+                    </div>
+                    <div class="story-property">
+                        <span class="property-tag">东京都新宿区</span>
+                        <span class="property-type">1R</span>
+                        <span class="property-price">7.5万円/月</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-lang="faq_title">常见问题</h2>
+                <p class="section-subtitle" data-lang="faq_subtitle">解答外国人在日本租房的常见疑问</p>
+            </div>
+
+            <div class="faq-categories">
+                <div class="category-tabs">
+                    <button class="category-btn active" data-category="general" data-lang="faq_general">一般问题</button>
+                    <button class="category-btn" data-category="documents" data-lang="faq_documents">文件要求</button>
+                    <button class="category-btn" data-category="fees" data-lang="faq_fees">费用相关</button>
+                    <button class="category-btn" data-category="living" data-lang="faq_living">入住生活</button>
+                </div>
+
+                <div class="faq-content">
+                    <!-- 一般问题 -->
+                    <div class="faq-category active" id="general">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4 data-lang="faq_q1">外国人可以在日本租房吗？</h4>
+                                <span class="faq-icon">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p data-lang="faq_a1">当然可以！只要持有合法的在留资格，外国人完全可以在日本租房。日清不动产专门为外国人提供租房服务，帮助解决语言和文化差异带来的问题。</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4 data-lang="faq_q2">不会日语可以租房吗？</h4>
+                                <span class="faq-icon">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p data-lang="faq_a2">完全可以！我们提供8种语言的服务，包括中文、英语、法语、越南语等。从咨询到签约，全程都有专业翻译人员协助，确保您完全理解合同内容和租赁条款。</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4 data-lang="faq_q3">在日本租房需要保证人吗？</h4>
+                                <span class="faq-icon">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p data-lang="faq_a3">传统上日本租房确实需要保证人，但我们与多家保证公司合作，可以为外国人提供保证人替代方案。这样就不需要找日本朋友或同事做保证人了。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 文件要求 -->
+                    <div class="faq-category" id="documents">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4 data-lang="faq_q4">租房需要准备哪些文件？</h4>
+                                <span class="faq-icon">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p data-lang="faq_a4">基本文件包括：在留卡、护照、收入证明书、学生证（留学生）、印章等。我们会根据您的具体情况提供详细的文件清单，并协助您准备。</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4 data-lang="faq_q5">收入证明有什么要求？</h4>
+                                <span class="faq-icon">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p data-lang="faq_a5">一般来说，月收入需要是房租的3倍左右。如果是公司职员，需要提供在职证明和收入证明；如果是留学生，可能需要提供奖学金证明或存款证明。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 费用相关 -->
+                    <div class="faq-category" id="fees">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4 data-lang="faq_q6">初期费用大概需要多少？</h4>
+                                <span class="faq-icon">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p data-lang="faq_a6">通过日清不动产租房，初期费用大约是2.3-3.3个月的房租，包括：中介费（0.3个月）、押金（1个月）、礼金（0-1个月）、第一个月房租、保证费等。</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4 data-lang="faq_q7">可以分期支付初期费用吗？</h4>
+                                <span class="faq-icon">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p data-lang="faq_a7">部分初期费用可以分期支付，具体情况需要根据房东的要求和保证公司的政策来确定。我们会尽量为您争取有利的支付条件。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 入住生活 -->
+                    <div class="faq-category" id="living">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4 data-lang="faq_q8">入住后需要办理哪些手续？</h4>
+                                <span class="faq-icon">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p data-lang="faq_a8">需要办理：住民登记、国民健康保险、银行开户、水电气煤气开通等。我们提供完整的手续指导服务，协助您顺利完成各种登记。</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4 data-lang="faq_q9">房屋设备坏了怎么办？</h4>
+                                <span class="faq-icon">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p data-lang="faq_a9">入住期间如有设备故障，可以直接联系我们。我们会协助您联系房东或管理公司安排维修。紧急情况下也有24小时联系方式。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title" data-lang="cta_title">准备开始您的日本租房之旅？</h2>
+                <p class="cta-subtitle" data-lang="cta_subtitle">专业团队为您服务，8语言支持，让租房变得简单</p>
+                <div class="cta-buttons">
+                    <a href="property-search.html" class="btn btn-primary" data-lang="cta_search">开始找房</a>
+                    <button class="btn btn-secondary btn-consultation" data-lang="cta_consult">免费咨询</button>
+                </div>
+                <div class="cta-info">
+                    <div class="info-item">
+                        <span class="info-icon">📞</span>
+                        <span class="info-text" data-lang="cta_phone">咨询热线：03-1234-5678</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">⏰</span>
+                        <span class="info-text" data-lang="cta_hours">营业时间：9:00-21:00 全年无休</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/nisshin-logo-white.png" alt="日清不动产 Logo">
+                        <h3>日清不动产</h3>
+                        <p data-lang="footer_slogan">让世界成为你的家</p>
+                    </div>
+                    <div class="footer-contact">
+                        <h4 data-lang="footer_contact_title">联系方式</h4>
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <span data-lang="footer_address">东京都涩谷区道玄坂1-2-3 ABC大厦8F</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <span data-lang="footer_phone">03-1234-5678</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">✉️</span>
+                            <span data-lang="footer_email">info@nisshin-real-estate.jp</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4 data-lang="footer_services_title">服务内容</h4>
+                    <ul class="footer-links">
+                        <li><a href="property-search.html" data-lang="footer_service1">房屋搜索</a></li>
+                        <li><a href="vr-tour.html" data-lang="footer_service2">VR看房</a></li>
+                        <li><a href="services.html" data-lang="footer_service3">租赁服务</a></li>
+                        <li><a href="#" data-lang="footer_service4">搬家服务</a></li>
+                        <li><a href="#" data-lang="footer_service5">生活支持</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 data-lang="footer_guide_title">外国人指南</h4>
+                    <ul class="footer-links">
+                        <li><a href="foreigner-guide.html" data-lang="footer_guide1">租房流程</a></li>
+                        <li><a href="#" data-lang="footer_guide2">费用说明</a></li>
+                        <li><a href="#" data-lang="footer_guide3">文件准备</a></li>
+                        <li><a href="#" data-lang="footer_guide4">生活指南</a></li>
+                        <li><a href="#" data-lang="footer_guide5">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 data-lang="footer_company_title">公司信息</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html" data-lang="footer_about">关于我们</a></li>
+                        <li><a href="#" data-lang="footer_team">团队介绍</a></li>
+                        <li><a href="#" data-lang="footer_license">营业执照</a></li>
+                        <li><a href="#" data-lang="footer_privacy">隐私政策</a></li>
+                        <li><a href="#" data-lang="footer_terms">使用条款</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <p>&copy; 2024 日清不动产 Nisshin Real Estate. All rights reserved.</p>
+                </div>
+                <div class="footer-bottom-right">
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="微信">💬</a>
+                        <a href="#" class="social-link" aria-label="LINE">📱</a>
+                        <a href="#" class="social-link" aria-label="微博">🌐</a>
+                        <a href="#" class="social-link" aria-label="Facebook">📘</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 咨询弹窗 -->
+    <div class="modal-overlay" id="consultationModal">
+        <div class="modal consultation-modal">
+            <div class="modal-header">
+                <h2 class="modal-title" data-lang="consultation_modal_title">免费咨询预约</h2>
+                <button class="modal-close" id="closeConsultationModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="consultationForm" class="consultation-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label data-lang="consultation_name_label">姓名 *</label>
+                            <input type="text" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label data-lang="consultation_phone_label">电话 *</label>
+                            <input type="tel" name="phone" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label data-lang="consultation_email_label">邮箱 *</label>
+                            <input type="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label data-lang="consultation_language_label">偏好语言</label>
+                            <select name="language">
+                                <option value="zh">中文</option>
+                                <option value="ja">日本語</option>
+                                <option value="en">English</option>
+                                <option value="fr">Français</option>
+                                <option value="vi">Tiếng Việt</option>
+                                <option value="ko">한국어</option>
+                                <option value="mn">Монгол</option>
+                                <option value="ms">Bahasa</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label data-lang="consultation_date_label">期望咨询时间</label>
+                        <input type="datetime-local" name="datetime">
+                    </div>
+
+                    <div class="form-group">
+                        <label data-lang="consultation_budget_label">预算范围</label>
+                        <select name="budget">
+                            <option value="">请选择</option>
+                            <option value="5-8">5-8万円</option>
+                            <option value="8-12">8-12万円</option>
+                            <option value="12-15">12-15万円</option>
+                            <option value="15-20">15-20万円</option>
+                            <option value="20+">20万円以上</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label data-lang="consultation_area_label">期望区域</label>
+                        <select name="area">
+                            <option value="">请选择</option>
+                            <option value="central">东京23区中心部</option>
+                            <option value="west">东京23区西部</option>
+                            <option value="east">东京23区东部</option>
+                            <option value="kanagawa">神奈川县</option>
+                            <option value="saitama">埼玉县</option>
+                            <option value="chiba">千叶县</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label data-lang="consultation_message_label">咨询内容</label>
+                        <textarea name="message" rows="4" placeholder="请告诉我们您的具体需求..."></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary" data-lang="consultation_submit">提交预约</button>
+                        <button type="button" class="btn btn-secondary" id="cancelConsultation" data-lang="consultation_cancel">取消</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/services.js"></script>
+</body>
+</html>

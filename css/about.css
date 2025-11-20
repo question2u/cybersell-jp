@@ -1,0 +1,1080 @@
+/* ===== 关于我们页面专用样式 ===== */
+
+/* ===== 页面标题区 ===== */
+.page-header {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, #0F172A 100%);
+    color: var(--bg-primary);
+    padding: calc(80px + var(--space-3xl)) 0 var(--space-2xl);
+    text-align: center;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    font-size: 14px;
+    margin-bottom: var(--space-lg);
+    opacity: 0.9;
+}
+
+.breadcrumb a {
+    color: var(--bg-primary);
+    text-decoration: none;
+    transition: var(--transition-normal);
+}
+
+.breadcrumb a:hover {
+    opacity: 0.8;
+}
+
+.breadcrumb-separator {
+    color: var(--text-muted);
+    font-size: 18px;
+}
+
+.breadcrumb-current {
+    color: var(--accent-gold);
+    font-weight: 600;
+}
+
+.page-title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: var(--space-md);
+    line-height: 1.2;
+}
+
+.page-subtitle {
+    font-size: 20px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ===== 公司概览 ===== */
+.company-overview {
+    padding: var(--space-4xl) 0;
+    background-color: var(--bg-secondary);
+}
+
+.overview-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.company-intro {
+    text-align: center;
+}
+
+.section-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: var(--space-lg);
+}
+
+.intro-text {
+    margin-bottom: var(--space-3xl);
+    text-align: left;
+}
+
+.intro-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-lg);
+}
+
+.company-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--space-xl);
+    margin-top: var(--space-3xl);
+}
+
+.stat-item {
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-normal);
+}
+
+.stat-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.stat-number {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: var(--space-sm);
+    background: linear-gradient(135deg, var(--primary-dark), var(--accent-gold));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* ===== 核心理念 ===== */
+.core-values {
+    padding: var(--space-4xl) 0;
+    background-color: var(--bg-primary);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: var(--space-3xl);
+}
+
+.section-subtitle {
+    font-size: 18px;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-2xl);
+}
+
+.value-card {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-normal);
+    border: 2px solid transparent;
+}
+
+.value-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-light);
+}
+
+.value-icon {
+    font-size: 64px;
+    margin-bottom: var(--space-lg);
+    line-height: 1;
+}
+
+.value-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: var(--space-md);
+}
+
+.value-description {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* ===== 服务优势 ===== */
+.service-advantages {
+    padding: var(--space-4xl) 0;
+    background-color: var(--bg-secondary);
+}
+
+.advantages-content {
+    display: grid;
+    gap: var(--space-xl);
+}
+
+.advantage-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-xl);
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-normal);
+    align-items: center;
+}
+
+.advantage-item:hover {
+    transform: translateX(8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.advantage-number {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-dark), var(--accent-gold));
+    color: var(--bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 700;
+    flex-shrink: 0;
+    box-shadow: var(--shadow-lg);
+}
+
+.advantage-content {
+    flex: 1;
+}
+
+.advantage-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: var(--space-md);
+}
+
+.advantage-description {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* ===== 团队介绍 ===== */
+.team-section {
+    padding: var(--space-4xl) 0;
+    background-color: var(--bg-primary);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--space-2xl);
+    margin-bottom: var(--space-4xl);
+}
+
+.team-member {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-normal);
+}
+
+.team-member:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.member-photo {
+    height: 250px;
+    overflow: hidden;
+    background-color: var(--bg-tertiary);
+}
+
+.member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-normal);
+}
+
+.team-member:hover .member-photo img {
+    transform: scale(1.05);
+}
+
+.member-info {
+    padding: var(--space-xl);
+}
+
+.member-name {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: var(--space-xs);
+}
+
+.member-position {
+    font-size: 16px;
+    color: var(--accent-gold);
+    font-weight: 500;
+    margin-bottom: var(--space-md);
+}
+
+.member-languages {
+    display: flex;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
+    flex-wrap: wrap;
+}
+
+.lang-badge {
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-full);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.member-bio {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* 团队文化 */
+.team-culture {
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-xl);
+    padding: var(--space-3xl);
+    text-align: center;
+}
+
+.culture-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: var(--space-2xl);
+}
+
+.culture-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-xl);
+}
+
+.culture-item {
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    transition: var(--transition-normal);
+}
+
+.culture-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.culture-icon {
+    font-size: 48px;
+    margin-bottom: var(--space-md);
+}
+
+.culture-item h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: var(--space-sm);
+}
+
+.culture-item p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ===== 合作伙伴 ===== */
+.partners-section {
+    padding: var(--space-4xl) 0;
+    background-color: var(--bg-secondary);
+}
+
+.partners-categories {
+    display: grid;
+    gap: var(--space-3xl);
+}
+
+.partner-category {
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl);
+    box-shadow: var(--shadow-md);
+}
+
+.category-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: var(--space-xl);
+    text-align: center;
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--space-xl);
+}
+
+.partner-item {
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    text-align: center;
+    transition: var(--transition-normal);
+    border: 1px solid var(--border-color);
+}
+
+.partner-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-light);
+}
+
+.partner-logo {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-md);
+}
+
+.partner-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: var(--transition-normal);
+}
+
+.partner-item:hover .partner-logo img {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+.partner-name {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* ===== 公司资质 ===== */
+.certifications-section {
+    padding: var(--space-4xl) 0;
+    background-color: var(--bg-primary);
+}
+
+.certifications-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-xl);
+}
+
+.certification-item {
+    display: flex;
+    gap: var(--space-lg);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-normal);
+}
+
+.certification-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.certification-icon {
+    font-size: 48px;
+    line-height: 1;
+    color: var(--accent-gold);
+    flex-shrink: 0;
+}
+
+.certification-info {
+    flex: 1;
+}
+
+.certification-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: var(--space-sm);
+}
+
+.certification-description {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ===== 客户评价 ===== */
+.testimonials-section {
+    padding: var(--space-4xl) 0;
+    background-color: var(--bg-secondary);
+}
+
+.testimonials-carousel {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.testimonial-item {
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl);
+    box-shadow: var(--shadow-md);
+    display: none;
+}
+
+.testimonial-item.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.testimonial-content {
+    margin-bottom: var(--space-xl);
+}
+
+.testimonial-text {
+    margin-bottom: var(--space-xl);
+    position: relative;
+    padding: 0 var(--space-lg);
+}
+
+.testimonial-text::before {
+    content: '"';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    font-size: 80px;
+    color: var(--accent-gold);
+    opacity: 0.3;
+    font-family: serif;
+}
+
+.testimonial-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin: 0;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--border-color);
+}
+
+.author-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: var(--bg-primary);
+}
+
+.author-info {
+    flex: 1;
+    margin-left: var(--space-md);
+}
+
+.author-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: var(--space-xs);
+}
+
+.author-title {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.testimonial-rating {
+    display: flex;
+    gap: 2px;
+}
+
+.star {
+    font-size: 16px;
+    color: #FFD700;
+}
+
+.testimonial-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+.testimonial-prev,
+.testimonial-next {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary-dark);
+    color: var(--bg-primary);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-normal);
+    font-size: 18px;
+}
+
+.testimonial-prev:hover,
+.testimonial-next:hover {
+    background: var(--primary-light);
+}
+
+.testimonial-dots {
+    display: flex;
+    gap: var(--space-sm);
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--border-color);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-normal);
+}
+
+.dot.active {
+    background: var(--primary-dark);
+}
+
+/* ===== 联系我们 ===== */
+.contact-section {
+    padding: var(--space-4xl) 0;
+    background-color: var(--bg-primary);
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3xl);
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+}
+
+.contact-item {
+    display: flex;
+    gap: var(--space-lg);
+    padding: var(--space-xl);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.contact-icon {
+    font-size: 32px;
+    flex-shrink: 0;
+    color: var(--primary-dark);
+}
+
+.contact-details h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: var(--space-sm);
+}
+
+.contact-details p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-xs);
+}
+
+.contact-details .phone-number {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+.contact-details a {
+    color: var(--primary-light);
+    text-decoration: none;
+    transition: var(--transition-normal);
+}
+
+.contact-details a:hover {
+    color: var(--primary-dark);
+}
+
+/* 联系表单 */
+.contact-form {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl);
+    box-shadow: var(--shadow-sm);
+}
+
+.contact-form h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: var(--space-xl);
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: var(--space-md);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    transition: var(--transition-normal);
+    background-color: var(--bg-primary);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-dark);
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-family: inherit;
+}
+
+.form-actions {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    margin-top: var(--space-lg);
+}
+
+/* ===== CTA区域 ===== */
+.cta-section {
+    padding: var(--space-4xl) 0;
+    background: linear-gradient(135deg, var(--primary-dark) 0%, #0F172A 100%);
+    color: var(--bg-primary);
+    text-align: center;
+}
+
+.cta-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: var(--space-md);
+}
+
+.cta-subtitle {
+    font-size: 18px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto var(--space-2xl);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: var(--space-lg);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ===== 响应式设计 ===== */
+
+/* 大屏幕优化 */
+@media (min-width: 1200px) {
+    .values-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .certifications-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* 中等屏幕 */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .page-title {
+        font-size: 36px;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-2xl);
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .certifications-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 小屏幕 */
+@media (max-width: 767px) {
+    .page-header {
+        padding: calc(70px + var(--space-2xl)) var(--space-sm) var(--space-lg);
+    }
+
+    .page-title {
+        font-size: 28px;
+    }
+
+    .page-subtitle {
+        font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .company-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-lg);
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+
+    .advantage-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: var(--space-lg);
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+
+    .culture-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-lg);
+    }
+
+    .partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-lg);
+    }
+
+    .certifications-content {
+        grid-template-columns: 1fr;
+    }
+
+    .certification-item {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-md);
+    }
+
+    .testimonial-author {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-md);
+    }
+
+    .author-info {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .contact-info {
+        gap: var(--space-lg);
+    }
+
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-md);
+    }
+
+    .cta-title {
+        font-size: 24px;
+    }
+
+    .cta-subtitle {
+        font-size: 16px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* 超小屏幕 */
+@media (max-width: 479px) {
+    .stat-item {
+        padding: var(--space-lg);
+    }
+
+    .stat-number {
+        font-size: 36px;
+    }
+
+    .value-card {
+        padding: var(--space-lg);
+    }
+
+    .value-icon {
+        font-size: 48px;
+    }
+
+    .advantage-item {
+        padding: var(--space-lg);
+    }
+
+    .advantage-number {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+
+    .advantage-title {
+        font-size: 20px;
+    }
+
+    .member-info {
+        padding: var(--space-lg);
+    }
+
+    .member-name {
+        font-size: 20px;
+    }
+
+    .culture-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .partner-category {
+        padding: var(--space-lg);
+    }
+
+    .partners-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+
+    .certification-item {
+        padding: var(--space-lg);
+    }
+
+    .certification-icon {
+        font-size: 36px;
+    }
+
+    .testimonial-item {
+        padding: var(--space-lg);
+    }
+
+    .contact-form {
+        padding: var(--space-lg);
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+}
+
+/* 打印样式 */
+@media print {
+    .page-header,
+    .cta-section,
+    .navbar,
+    .footer {
+        display: none !important;
+    }
+
+    .company-overview,
+    .core-values,
+    .service-advantages,
+    .team-section,
+    .partners-section,
+    .certifications-section,
+    .testimonials-section,
+    .contact-section {
+        padding: var(--space-lg) 0 !important;
+        page-break-inside: avoid;
+    }
+
+    .value-card,
+    .advantage-item,
+    .team-member,
+    .certification-item,
+    .testimonial-item,
+    .contact-item {
+        break-inside: avoid;
+        box-shadow: none !important;
+        border: 1px solid var(--border-color) !important;
+        margin-bottom: var(--space-md);
+    }
+}

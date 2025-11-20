@@ -1,0 +1,1063 @@
+/* ===== 服务页面专用样式 ===== */
+
+/* ===== 页面标题区 ===== */
+.page-header {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, #0F172A 100%);
+    color: var(--bg-primary);
+    padding: calc(80px + var(--space-3xl)) 0 var(--space-2xl);
+    text-align: center;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    font-size: 14px;
+    margin-bottom: var(--space-lg);
+    opacity: 0.9;
+}
+
+.breadcrumb a {
+    color: var(--bg-primary);
+    text-decoration: none;
+    transition: var(--transition-normal);
+}
+
+.breadcrumb a:hover {
+    opacity: 0.8;
+}
+
+.breadcrumb-separator {
+    color: var(--text-muted);
+    font-size: 18px;
+}
+
+.breadcrumb-current {
+    color: var(--accent-gold);
+    font-weight: 600;
+}
+
+.page-title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: var(--space-md);
+    line-height: 1.2;
+}
+
+.page-subtitle {
+    font-size: 20px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ===== 服务概览 ===== */
+.services-overview {
+    padding: var(--space-4xl) 0;
+    background-color: var(--bg-secondary);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: var(--space-4xl);
+}
+
+.section-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: var(--space-md);
+}
+
+.section-subtitle {
+    font-size: 18px;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--space-2xl);
+    margin-bottom: var(--space-4xl);
+}
+
+.service-card {
+    background-color: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-normal);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card.featured {
+    border-color: var(--primary-dark);
+    transform: scale(1.02);
+}
+
+.service-card.featured::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-dark), var(--accent-gold));
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.service-icon {
+    font-size: 64px;
+    margin-bottom: var(--space-lg);
+    display: block;
+}
+
+.service-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: var(--space-md);
+}
+
+.service-description {
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-lg);
+}
+
+.service-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.service-features li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+    font-size: 14px;
+    color: var(--text-primary);
+}
+
+.service-features li::before {
+    content: '✓';
+    color: var(--accent-green);
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* ===== 租赁流程 ===== */
+.rental-process {
+    padding: var(--space-4xl) 0;
+    background-color: var(--bg-primary);
+}
+
+.process-timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-2xl);
+    position: relative;
+}
+
+.process-timeline::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-light), var(--accent-gold));
+    z-index: 0;
+}
+
+.process-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.step-number {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
+    color: var(--bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: var(--space-lg);
+    box-shadow: var(--shadow-lg);
+    position: relative;
+}
+
+.step-number::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-gold), var(--primary-dark));
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+    transition: var(--transition-normal);
+    z-index: -1;
+}
+
+.process-step:hover .step-number::after {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: var(--space-md);
+}
+
+.step-description {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+}
+
+.step-duration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xs);
+    font-size: 12px;
+    color: var(--text-muted);
+    background-color: var(--bg-tertiary);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-full);
+}
+
+.duration-label {
+    font-weight: 500;
+}
+
+.duration-value {
+    font-weight: 600;
+    color: var(--accent-green);
+}
+
+/* ===== 费用说明 ===== */
+.fee-section {
+    padding: var(--space-4xl) 0;
+    background-color: var(--bg-secondary);
+}
+
+.fee-comparison {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: var(--space-3xl);
+    margin-bottom: var(--space-2xl);
+}
+
+.fee-table {
+    background-color: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl);
+    box-shadow: var(--shadow-md);
+    border: 2px solid var(--border-color);
+    position: relative;
+}
+
+.fee-table.highlighted {
+    border-color: var(--accent-gold);
+    transform: scale(1.03);
+    box-shadow: var(--shadow-xl);
+}
+
+.best-value-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--accent-gold), #DC2626);
+    color: var(--bg-primary);
+    padding: var(--space-xs) var(--space-lg);
+    border-radius: var(--radius-full);
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow: var(--shadow-md);
+}
+
+.table-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--primary-dark);
+    text-align: center;
+    margin-bottom: var(--space-xl);
+}
+
+.fee-items {
+    margin-bottom: var(--space-xl);
+}
+
+.fee-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+}
+
+.fee-item:last-child {
+    border-bottom: none;
+}
+
+.fee-item.discount {
+    background: linear-gradient(90deg, rgba(16, 185, 129, 0.1) 0%, transparent 100%);
+    border-radius: var(--radius-md);
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+}
+
+.fee-name {
+    font-size: 14px;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.fee-value {
+    font-size: 16px;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.discount-badge {
+    position: absolute;
+    top: var(--space-xs);
+    right: var(--space-xs);
+    background-color: var(--accent-green);
+    color: var(--bg-primary);
+    padding: 2px var(--space-xs);
+    border-radius: var(--radius-sm);
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.fee-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--space-lg);
+    border-top: 2px solid var(--primary-dark);
+    margin-top: var(--space-lg);
+}
+
+.total-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary-dark);
+}
+
+.total-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent-gold);
+}
+
+.fee-note {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* ===== 外国人专门服务 ===== */
+.foreigner-services {
+    padding: var(--space-4xl) 0;
+    background-color: var(--bg-primary);
+}
+
+.foreigner-features {
+    margin-top: var(--space-4xl);
+}
+
+.feature-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-3xl);
+    align-items: center;
+    margin-bottom: var(--space-4xl);
+}
+
+.feature-row.reverse {
+    direction: rtl;
+}
+
+.feature-row.reverse > * {
+    direction: ltr;
+}
+
+.feature-icon-large {
+    font-size: 120px;
+    line-height: 1;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary-dark), var(--accent-gold));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
+}
+
+.feature-content {
+    flex: 1;
+}
+
+.feature-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: var(--space-md);
+}
+
+.feature-description {
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-lg);
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+    font-size: 14px;
+    color: var(--text-primary);
+}
+
+.feature-list li::before {
+    content: '→';
+    color: var(--accent-gold);
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* ===== 成功案例 ===== */
+.success-stories {
+    padding: var(--space-4xl) 0;
+    background-color: var(--bg-secondary);
+}
+
+.stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--space-2xl);
+}
+
+.story-card {
+    background-color: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-normal);
+}
+
+.story-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.story-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-lg);
+}
+
+.customer-info {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.customer-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+    color: var(--bg-primary);
+    font-weight: 600;
+}
+
+.customer-details {
+    flex: 1;
+}
+
+.customer-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-xs);
+}
+
+.customer-role {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.rating {
+    display: flex;
+    gap: 2px;
+}
+
+.star {
+    font-size: 16px;
+    color: #FFD700;
+}
+
+.story-content {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-lg);
+}
+
+.story-property {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+}
+
+.property-tag,
+.property-type,
+.property-price {
+    padding: var(--space-xs) var(--space-sm);
+    background-color: var(--bg-tertiary);
+    border-radius: var(--radius-full);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.property-tag {
+    background-color: var(--primary-light);
+    color: var(--bg-primary);
+}
+
+.property-price {
+    background-color: var(--accent-gold);
+    color: var(--bg-primary);
+}
+
+/* ===== FAQ ===== */
+.faq-section {
+    padding: var(--space-4xl) 0;
+    background-color: var(--bg-primary);
+}
+
+.faq-categories {
+    margin-top: var(--space-3xl);
+}
+
+.category-tabs {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-3xl);
+    flex-wrap: wrap;
+}
+
+.category-btn {
+    padding: var(--space-md) var(--space-xl);
+    background-color: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: var(--transition-normal);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.category-btn:hover {
+    background-color: var(--bg-tertiary);
+    border-color: var(--primary-dark);
+}
+
+.category-btn.active {
+    background-color: var(--primary-dark);
+    color: var(--bg-primary);
+    border-color: var(--primary-dark);
+}
+
+.faq-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-category {
+    display: none;
+}
+
+.faq-category.active {
+    display: block;
+}
+
+.faq-item {
+    margin-bottom: var(--space-lg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: var(--transition-normal);
+}
+
+.faq-item.active {
+    border-color: var(--primary-dark);
+    box-shadow: var(--shadow-md);
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-lg);
+    background-color: var(--bg-primary);
+    cursor: pointer;
+    transition: var(--transition-normal);
+}
+
+.faq-question:hover {
+    background-color: var(--bg-tertiary);
+}
+
+.faq-question h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+    flex: 1;
+}
+
+.faq-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--primary-dark);
+    color: var(--bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
+    transition: var(--transition-normal);
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+    background-color: var(--accent-gold);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: var(--bg-secondary);
+}
+
+.faq-item.active .faq-answer {
+    max-height: 300px;
+}
+
+.faq-answer p {
+    padding: var(--space-lg);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* ===== CTA区域 ===== */
+.cta-section {
+    padding: var(--space-4xl) 0;
+    background: linear-gradient(135deg, var(--primary-dark) 0%, #0F172A 100%);
+    color: var(--bg-primary);
+    text-align: center;
+}
+
+.cta-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: var(--space-md);
+}
+
+.cta-subtitle {
+    font-size: 18px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto var(--space-2xl);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: var(--space-lg);
+    justify-content: center;
+    margin-bottom: var(--space-2xl);
+    flex-wrap: wrap;
+}
+
+.cta-info {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-2xl);
+    flex-wrap: wrap;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.info-icon {
+    font-size: 18px;
+}
+
+/* ===== 咨询弹窗 ===== */
+.consultation-modal {
+    max-width: 600px;
+    width: 90%;
+}
+
+.consultation-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: var(--space-md);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    transition: var(--transition-normal);
+    background-color: var(--bg-primary);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-dark);
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+    font-family: inherit;
+}
+
+.form-actions {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    margin-top: var(--space-lg);
+}
+
+.form-actions .btn {
+    min-width: 150px;
+}
+
+/* ===== 响应式设计 ===== */
+
+/* 大屏幕优化 */
+@media (min-width: 1200px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .process-timeline {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .process-timeline::before {
+        display: block;
+    }
+
+    .stories-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* 中等屏幕 */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .page-title {
+        font-size: 36px;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .process-timeline {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .process-timeline::before {
+        display: none;
+    }
+
+    .fee-comparison {
+        grid-template-columns: 1fr;
+        gap: var(--space-2xl);
+    }
+
+    .feature-row {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: var(--space-xl);
+    }
+
+    .feature-row.reverse {
+        direction: ltr;
+    }
+
+    .stories-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 小屏幕 */
+@media (max-width: 767px) {
+    .page-header {
+        padding: calc(70px + var(--space-2xl)) var(--space-sm) var(--space-lg);
+    }
+
+    .page-title {
+        font-size: 28px;
+    }
+
+    .page-subtitle {
+        font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+
+    .service-card {
+        padding: var(--space-xl);
+    }
+
+    .service-card.featured {
+        transform: none;
+    }
+
+    .process-timeline {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+
+    .process-timeline::before {
+        display: none;
+    }
+
+    .process-step {
+        text-align: center;
+    }
+
+    .step-number {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+
+    .fee-comparison {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+
+    .fee-table.highlighted {
+        transform: none;
+    }
+
+    .feature-row {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: var(--space-xl);
+    }
+
+    .feature-row.reverse {
+        direction: ltr;
+    }
+
+    .feature-icon-large {
+        font-size: 80px;
+    }
+
+    .stories-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .story-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-md);
+    }
+
+    .category-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .category-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .cta-title {
+        font-size: 24px;
+    }
+
+    .cta-subtitle {
+        font-size: 16px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-info {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+}
+
+/* 超小屏幕 */
+@media (max-width: 479px) {
+    .section-header {
+        margin-bottom: var(--space-2xl);
+    }
+
+    .service-card {
+        padding: var(--space-lg);
+    }
+
+    .service-icon {
+        font-size: 48px;
+    }
+
+    .feature-icon-large {
+        font-size: 60px;
+    }
+
+    .consultation-modal {
+        width: 95%;
+        max-height: 90vh;
+    }
+
+    .modal-body {
+        max-height: calc(90vh - 120px);
+        overflow-y: auto;
+    }
+}
+
+/* 打印样式 */
+@media print {
+    .page-header,
+    .cta-section,
+    .navbar,
+    .footer {
+        display: none !important;
+    }
+
+    .services-overview,
+    .rental-process,
+    .fee-section,
+    .foreigner-services,
+    .success-stories,
+    .faq-section {
+        padding: var(--space-lg) 0 !important;
+        page-break-inside: avoid;
+    }
+
+    .service-card,
+    .process-step,
+    .fee-table,
+    .story-card,
+    .faq-item {
+        break-inside: avoid;
+        box-shadow: none !important;
+        border: 1px solid var(--border-color) !important;
+        margin-bottom: var(--space-md);
+    }
+}

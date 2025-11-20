@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VR内見体験 | 日清不动产</title>
+    <meta name="description" content="日清不动产のVR看房体验。360度全景看房，随时随地查看理想住所。">
+    <meta name="keywords" content="VR内見,360度見学,バーチャル見学,不動産,物件見学">
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/vr-tour.css">
+    <script src="js/main.js" defer></script>
+    <script src="js/vr-tour.js" defer></script>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo">
+                    <span class="logo-ja">日清不動産</span>
+                    <span class="logo-en">NISSHIN REAL ESTATE</span>
+                </a>
+            </div>
+
+            <!-- 语言切换 -->
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="ja" title="日本語">🇯🇵</button>
+                <button class="lang-btn" data-lang="zh" title="中文">🇨🇳</button>
+                <button class="lang-btn" data-lang="en" title="English">🇬🇧</button>
+                <button class="lang-btn" data-lang="fr" title="Français">🇫🇷</button>
+                <button class="lang-btn" data-lang="vi" title="Tiếng Việt">🇻🇳</button>
+                <button class="lang-btn" data-lang="ko" title="한국어">🇰🇷</button>
+                <button class="lang-btn" data-lang="mn" title="Монгол">🇲🇳</button>
+                <button class="lang-btn" data-lang="my" title="Bahasa Melayu">🇲🇾</button>
+            </div>
+
+            <!-- 桌面端导航菜单 -->
+            <div class="nav-menu desktop-menu">
+                <ul>
+                    <li><a href="index.html#services">サービス</a></li>
+                    <li><a href="index.html#advantages">DXの強み</a></li>
+                    <li><a href="property-search.html">物件検索</a></li>
+                    <li><a href="index.html#testimonials">お客様の声</a></li>
+                    <li><a href="index.html#guide">外国人ガイド</a></li>
+                    <li><a href="index.html#company">会社情報</a></li>
+                    <li><a href="index.html#contact">お問い合わせ</a></li>
+                </ul>
+            </div>
+
+            <!-- 汉堡菜单按钮 -->
+            <button class="hamburger-menu" id="hamburgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <!-- 移动端导航菜单 -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html#services">サービス</a></li>
+                <li><a href="index.html#advantages">DXの強み</a></li>
+                <li><a href="property-search.html">物件検索</a></li>
+                <li><a href="index.html#testimonials">お客様の声</a></li>
+                <li><a href="index.html#guide">外国人ガイド</a></li>
+                <li><a href="index.html#company">会社情報</a></li>
+                <li><a href="index.html#contact">お問い合わせ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- VR查看器区域 -->
+    <section class="vr-viewer-section">
+        <div class="vr-container" id="vrContainer">
+            <!-- VR查看器头部控制栏 -->
+            <div class="vr-header">
+                <div class="vr-header-left">
+                    <a href="property-search.html" class="back-btn">
+                        <span class="back-icon">←</span>
+                        <span class="back-ja">物件一覧に戻る</span>
+                        <span class="back-zh" style="display:none">返回房源列表</span>
+                        <span class="back-en" style="display:none">Back to Properties</span>
+                    </a>
+                </div>
+
+                <div class="vr-header-center">
+                    <h1 class="vr-title">
+                        <span class="title-ja">VR内見体験</span>
+                        <span class="title-zh" style="display:none">VR看房体验</span>
+                        <span class="title-en" style="display:none">VR Tour Experience</span>
+                    </h1>
+                </div>
+
+                <div class="vr-header-right">
+                    <button class="vr-info-btn" id="vrInfoBtn">
+                        <span class="info-icon">ℹ️</span>
+                        <span class="info-ja">物件情報</span>
+                        <span class="info-zh" style="display:none">房源信息</span>
+                        <span class="info-en" style="display:none">Property Info</span>
+                    </button>
+                    <button class="vr-language-btn" id="vrLanguageBtn">
+                        <span class="lang-icon">🌐</span>
+                        <span class="lang-ja">EN</span>
+                    </button>
+                    <button class="vr-fullscreen-btn" id="vrFullscreenBtn">
+                        <span class="fullscreen-icon">⛶</span>
+                        <span class="fullscreen-ja">全画面</span>
+                        <span class="fullscreen-zh" style="display:none">全屏</span>
+                        <span class="fullscreen-en" style="display:none">Fullscreen</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- VR场景选择 -->
+            <div class="vr-scene-selector" id="vrSceneSelector">
+                <div class="scene-tabs">
+                    <button class="scene-tab active" data-scene="living">
+                        <span class="tab-ja">リビング</span>
+                        <span class="tab-zh" style="display:none">客厅</span>
+                        <span class="tab-en" style="display:none">Living Room</span>
+                    </button>
+                    <button class="scene-tab" data-scene="bedroom">
+                        <span class="tab-ja">寝室</span>
+                        <span class="tab-zh" style="display:none">卧室</span>
+                        <span class="tab-en" style="display:none">Bedroom</span>
+                    </button>
+                    <button class="scene-tab" data-scene="kitchen">
+                        <span class="tab-ja">キッチン</span>
+                        <span class="tab-zh" style="display:none">厨房</span>
+                        <span class="tab-en" style="display:none">Kitchen</span>
+                    </button>
+                    <button class="scene-tab" data-scene="bathroom">
+                        <span class="tab-ja">浴室</span>
+                        <span class="tab-zh" style="display:none">浴室</span>
+                        <span class="tab-en" style="display:none">Bathroom</span>
+                    </button>
+                    <button class="scene-tab" data-scene="entrance">
+                        <span class="tab-ja">玄関</span>
+                        <span class="tab-zh" style="display:none">玄关</span>
+                        <span class="tab-en" style="display:none">Entrance</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 主VR查看区域 -->
+            <div class="vr-main-viewer" id="vrMainViewer">
+                <div class="vr-panorama" id="vrPanorama">
+                    <!-- 360度全景图容器 -->
+                    <div class="panorama-container">
+                        <div class="panorama-image" id="panoramaImage">
+                            <!-- 实际应用中这里会集成360度图片查看器 -->
+                            <img src="https://picsum.photos/1200/600?random=vr-living" alt="リビング360°" id="mainImage">
+                        </div>
+
+                        <!-- VR加载指示器 -->
+                        <div class="vr-loading" id="vrLoading">
+                            <div class="loading-spinner"></div>
+                            <div class="loading-text">
+                                <span class="loading-ja">360°画像を読み込み中...</span>
+                                <span class="loading-zh" style="display:none">加载360°图片中...</span>
+                                <span class="loading-en" style="display:none">Loading 360° image...</span>
+                            </div>
+                        </div>
+
+                        <!-- VR热点 -->
+                        <div class="vr-hotspots" id="vrHotspots">
+                            <!-- 热点将通过JavaScript动态生成 -->
+                        </div>
+
+                        <!-- VR指南线 -->
+                        <div class="vr-guide-lines" id="vrGuideLines">
+                            <svg class="guide-svg" width="100%" height="100%">
+                                <!-- 指南线将在这里动态生成 -->
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 房间指示器 -->
+                <div class="room-indicator">
+                    <div class="room-dot active" data-room="living" title="リビング"></div>
+                    <div class="room-dot" data-room="bedroom" title="寝室"></div>
+                    <div class="room-dot" data-room="kitchen" title="キッチン"></div>
+                    <div class="room-dot" data-room="bathroom" title="浴室"></div>
+                    <div class="room-dot" data-room="entrance" title="玄関"></div>
+                </div>
+            </div>
+
+            <!-- VR控制栏 -->
+            <div class="vr-controls">
+                <div class="control-group navigation-controls">
+                    <button class="control-btn" id="moveForwardBtn" title="前進">
+                        <span class="control-icon">↑</span>
+                        <span class="control-ja">前進</span>
+                        <span class="control-zh" style="display:none">前进</span>
+                        <span class="control-en" style="display:none">Forward</span>
+                    </button>
+                    <button class="control-btn" id="moveBackwardBtn" title="後進">
+                        <span class="control-icon">↓</span>
+                        <span class="control-ja">後進</span>
+                        <span class="control-zh" style="display:none">后退</span>
+                        <span class="control-en" style="display:none">Backward</span>
+                    </button>
+                    <button class="control-btn" id="turnLeftBtn" title="左回転">
+                        <span class="control-icon">←</span>
+                        <span class="control-ja">左回転</span>
+                        <span class="control-zh" style="display:none">左转</span>
+                        <span class="control-en" style="display:none">Turn Left</span>
+                    </button>
+                    <button class="control-btn" id="turnRightBtn" title="右回転">
+                        <span class="control-icon">→</span>
+                        <span class="control-ja">右回転</span>
+                        <span class="control-zh" style="display:none">右转</span>
+                        <span class="control-en" style="display:none">Turn Right</span>
+                    </button>
+                </div>
+
+                <div class="control-group view-controls">
+                    <button class="control-btn" id="zoomInBtn" title="拡大">
+                        <span class="control-icon">🔍+</span>
+                        <span class="control-ja">拡大</span>
+                        <span class="control-zh" style="display:none">放大</span>
+                        <span class="control-en" style="display:none">Zoom In</span>
+                    </button>
+                    <button class="control-btn" id="zoomOutBtn" title="縮小">
+                        <span class="control-icon">🔍-</span>
+                        <span class="control-ja">縮小</span>
+                        <span class="control-zh" style="display:none">缩小</span>
+                        <span class="control-en" style="display:none">Zoom Out</span>
+                    </button>
+                    <button class="control-btn" id="resetViewBtn" title="初期表示">
+                        <span class="control-icon">🏠</span>
+                        <span class="control-ja">初期表示</span>
+                        <span class="control-zh" style="display:none">初始视图</span>
+                        <span class="control-en" style="display:none">Reset View</span>
+                    </button>
+                </div>
+
+                <div class="control-group mode-controls">
+                    <button class="control-btn" id="autoRotateBtn" title="自動回転">
+                        <span class="control-icon">🔄</span>
+                        <span class="control-ja">自動回転</span>
+                        <span class="control-zh" style="display:none">自动旋转</span>
+                        <span class="control-en" style="display:none">Auto Rotate</span>
+                    </button>
+                    <button class="control-btn" id="vrModeBtn" title="VRモード">
+                        <span class="control-icon">🥽</span>
+                        <span class="control-ja">VRモード</span>
+                        <span class="control-zh" style="display:none">VR模式</span>
+                        <span class="control-en" style="display:none">VR Mode</span>
+                    </button>
+                    <button class="control-btn" id="measureBtn" title="計測モード">
+                        <span class="control-icon">📏</span>
+                        <span class="control-ja">計測</span>
+                        <span class="control-zh" style="display:none">测量</span>
+                        <span class="control-en" style="display:none">Measure</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 缩略图条 -->
+            <div class="vr-thumbnails" id="vrThumbnails">
+                <div class="thumbnail-list">
+                    <!-- 缩略图将通过JavaScript动态生成 -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 物件信息面板 -->
+    <div class="property-info-panel" id="propertyInfoPanel">
+        <div class="panel-header">
+            <h2 class="panel-title">
+                <span class="panel-ja">物件情報</span>
+                <span class="panel-zh" style="display:none">房源信息</span>
+                <span class="panel-en" style="display:none">Property Information</span>
+            </h2>
+            <button class="panel-close" id="closeInfoPanel">&times;</button>
+        </div>
+
+        <div class="panel-content">
+            <div class="property-header">
+                <h3 class="property-name">
+                    <span class="name-ja">新宿区1DK 高層マンション</span>
+                    <span class="name-zh" style="display:none">新宿区1DK 高层公寓</span>
+                    <span class="name-en" style="display:none">Shinjuku 1DK High-Rise Apartment</span>
+                </h3>
+                <p class="property-address">
+                    <span class="address-ja">東京都新宿区西新宿6-15-1</span>
+                    <span class="address-zh" style="display:none">东京都新宿区西新宿6-15-1</span>
+                    <span class="address-en" style="display:none">6-15-1 Nishishinjuku, Shinjuku, Tokyo</span>
+                </p>
+            </div>
+
+            <div class="property-details">
+                <div class="detail-row">
+                    <div class="detail-item">
+                        <span class="detail-label">
+                            <span class="label-ja">家賃</span>
+                            <span class="label-zh" style="display:none">租金</span>
+                            <span class="label-en" style="display:none">Rent</span>
+                        </span>
+                        <span class="detail-value">12.5万円/月</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">
+                            <span class="label-ja">間取り</span>
+                            <span class="label-zh" style="display:none">户型</span>
+                            <span class="label-en" style="display:none">Layout</span>
+                        </span>
+                        <span class="detail-value">1DK</span>
+                    </div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-item">
+                        <span class="detail-label">
+                            <span class="label-ja">専有面積</span>
+                            <span class="label-zh" style="display:none">专有面积</span>
+                            <span class="label-en" style="display:none">Area</span>
+                        </span>
+                        <span class="detail-value">33㎡</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">
+                            <span class="label-ja">最寄り駅</span>
+                            <span class="label-zh" style="display:none">最近车站</span>
+                            <span class="label-en" style="display:none">Nearest Station</span>
+                        </span>
+                        <span class="detail-value">新宿駅 徒歩5分</span>
+                    </div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-item">
+                        <span class="detail-label">
+                            <span class="label-ja">築年数</span>
+                            <span class="label-zh" style="display:none">楼龄</span>
+                            <span class="label-en" style="display:none">Building Age</span>
+                        </span>
+                        <span class="detail-value">3年</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">
+                            <span class="label-ja">階数</span>
+                            <span class="label-zh" style="display:none">楼层</span>
+                            <span class="label-en" style="display:none">Floor</span>
+                        </span>
+                        <span class="detail-value">8階/15階建</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="property-features">
+                <h4 class="features-title">
+                    <span class="features-ja">特徴</span>
+                    <span class="features-zh" style="display:none">特色</span>
+                    <span class="features-en" style="display:none">Features</span>
+                </h4>
+                <div class="features-list">
+                    <div class="feature-tag">
+                        <span class="tag-icon">✅</span>
+                        <span class="tag-ja">保証人不要</span>
+                        <span class="tag-zh" style="display:none">无需保证人</span>
+                        <span class="tag-en" style="display:none">No Guarantor</span>
+                    </div>
+                    <div class="feature-tag">
+                        <span class="tag-icon">🛋️</span>
+                        <span class="tag-ja">家具家電付き</span>
+                        <span class="tag-zh" style="display:none">家具家电齐全</span>
+                        <span class="tag-en" style="display:none">Furnished</span>
+                    </div>
+                    <div class="feature-tag">
+                        <span class="tag-icon">🌇</span>
+                        <span class="tag-ja">駅徒歩5分</span>
+                        <span class="tag-zh" style="display:none">步行5分钟到站</span>
+                        <span class="tag-en" style="display:none">5 min to station</span>
+                    </div>
+                    <div class="feature-tag">
+                        <span class="tag-icon">🌅</span>
+                        <span class="tag-ja">南向き</span>
+                        <span class="tag-zh" style="display:none">朝南</span>
+                        <span class="tag-en" style="display:none">South facing</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-section">
+                <h4 class="contact-title">
+                    <span class="contact-ja">この物件について問い合わせ</span>
+                    <span class="contact-zh" style="display:none">咨询此房源</span>
+                    <span class="contact-en" style="display:none">Inquire about this property</span>
+                </h4>
+                <div class="contact-buttons">
+                    <button class="btn btn-primary" onclick="contactProperty()">
+                        <span class="btn-ja">お問い合わせ</span>
+                        <span class="btn-zh" style="display:none">咨询</span>
+                        <span class="btn-en" style="display:none">Inquire</span>
+                    </button>
+                    <button class="btn btn-secondary" onclick="scheduleViewing()">
+                        <span class="btn-ja">内見予約</span>
+                        <span class="btn-zh" style="display:none">预约看房</span>
+                        <span class="btn-en" style="display:none">Schedule Viewing</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 帮助说明 -->
+    <div class="vr-help" id="vrHelp">
+        <div class="help-content">
+            <h3 class="help-title">
+                <span class="help-ja">VR操作ガイド</span>
+                <span class="help-zh" style="display:none">VR操作指南</span>
+                <span class="help-en" style="display:none">VR Controls Guide</span>
+            </h3>
+            <div class="help-shortcuts">
+                <div class="shortcut-item">
+                    <kbd>↑</kbd>
+                    <span class="shortcut-desc">
+                        <span class="desc-ja">前進</span>
+                        <span class="desc-zh" style="display:none">前进</span>
+                        <span class="desc-en" style="display:none">Forward</span>
+                    </span>
+                </div>
+                <div class="shortcut-item">
+                    <kbd>↓</kbd>
+                    <span class="shortcut-desc">
+                        <span class="desc-ja">後進</span>
+                        <span class="desc-zh" style="display:none">后退</span>
+                        <span class="desc-en" style="display:none">Backward</span>
+                    </span>
+                </div>
+                <div class="shortcut-item">
+                    <kbd>←</kbd>
+                    <span class="shortcut-desc">
+                        <span class="desc-ja">左回転</span>
+                        <span class="desc-zh" style="display:none">左转</span>
+                        <span class="desc-en" style="display:none">Turn Left</span>
+                    </span>
+                </div>
+                <div class="shortcut-item">
+                    <kbd>→</kbd>
+                    <span class="shortcut-desc">
+                        <span class="desc-ja">右回転</span>
+                        <span class="desc-zh" style="display:none">右转</span>
+                        <span class="desc-en" style="display:none">Turn Right</span>
+                    </span>
+                </div>
+                <div class="shortcut-item">
+                    <kbd>+</kbd>
+                    <span class="shortcut-desc">
+                        <span class="desc-ja">拡大</span>
+                        <span class="desc-zh" style="display:none">放大</span>
+                        <span class="desc-en" style="display:none">Zoom In</span>
+                    </span>
+                </div>
+                <div class="shortcut-item">
+                    <kbd>-</kbd>
+                    <span class="shortcut-desc">
+                        <span class="desc-ja">縮小</span>
+                        <span class="desc-zh" style="display:none">缩小</span>
+                        <span class="desc-en" style="display:none">Zoom Out</span>
+                    </span>
+                </div>
+                <div class="shortcut-item">
+                    <kbd>R</kbd>
+                    <span class="shortcut-desc">
+                        <span class="desc-ja">自動回転</span>
+                        <span class="desc-zh" style="display:none">自动旋转</span>
+                        <span class="desc-en" style="display:none">Auto Rotate</span>
+                    </span>
+                </div>
+                <div class="shortcut-item">
+                    <kbd>F</kbd>
+                    <span class="shortcut-desc">
+                        <span class="desc-ja">全画面</span>
+                        <span class="desc-zh" style="display:none">全屏</span>
+                        <span class="desc-en" style="display:none">Fullscreen</span>
+                    </span>
+                </div>
+            </div>
+            <button class="help-close" id="closeHelp">
+                <span class="close-ja">閉じる</span>
+                <span class="close-zh" style="display:none">关闭</span>
+                <span class="close-en" style="display:none">Close</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- 帮助按钮 -->
+    <button class="vr-help-btn" id="vrHelpBtn" title="ヘルプ">
+        <span class="help-icon">?</span>
+    </button>
+
+    <!-- 底部返回按钮 -->
+    <div class="vr-footer">
+        <div class="footer-actions">
+            <button class="footer-btn" onclick="shareVRTour()">
+                <span class="btn-icon">🔗</span>
+                <span class="btn-ja">シェア</span>
+                <span class="btn-zh" style="display:none">分享</span>
+                <span class="btn-en" style="display:none">Share</span>
+            </button>
+            <button class="footer-btn" onclick="likeProperty()">
+                <span class="btn-icon">🤍</span>
+                <span class="btn-ja">お気に入り</span>
+                <span class="btn-zh" style="display:none">收藏</span>
+                <span class="btn-en" style="display:none">Favorite</span>
+            </button>
+            <button class="footer-btn primary" onclick="contactProperty()">
+                <span class="btn-icon">💬</span>
+                <span class="btn-ja">お問い合わせ</span>
+                <span class="btn-zh" style="display:none">咨询</span>
+                <span class="btn-en" style="display:none">Inquire</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-ja">日清不動産</span>
+                        <span class="logo-en">NISSHIN REAL ESTATE</span>
+                    </div>
+                    <p class="footer-description">
+                        <span class="footer-desc-ja">8言語対応・完全DX・外国人専門NO.1</span>
+                        <span class="footer-desc-zh" style="display:none">8语言对应・全程DX・外国人专属NO.1</span>
+                        <span class="footer-desc-en" style="display:none">8 Languages · Full DX · Foreigner Specialist No.1</span>
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">
+                        <span class="footer-title-ja">サービス</span>
+                        <span class="footer-title-zh" style="display:none">服务</span>
+                        <span class="footer-title-en" style="display:none">Services</span>
+                    </h3>
+                    <ul class="footer-links">
+                        <li><a href="rental.html">
+                            <span class="link-ja">賃貸サービス</span>
+                            <span class="link-zh" style="display:none">租赁服务</span>
+                            <span class="link-en" style="display:none">Rental Service</span>
+                        </a></li>
+                        <li><a href="buy-sell.html">
+                            <span class="link-ja">売買サービス</span>
+                            <span class="link-zh" style="display:none">买卖服务</span>
+                            <span class="link-en" style="display:none">Buy & Sell Service</span>
+                        </a></li>
+                        <li><a href="management.html">
+                            <span class="link-ja">管理サービス</span>
+                            <span class="link-zh" style="display:none">物业管理</span>
+                            <span class="link-en" style="display:none">Property Management</span>
+                        </a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">
+                        <span class="footer-title-ja">ガイド</span>
+                        <span class="footer-title-zh" style="display:none">指南</span>
+                        <span class="footer-title-en" style="display:none">Guides</span>
+                    </h3>
+                    <ul class="footer-links">
+                        <li><a href="rental-guide.html">
+                            <span class="link-ja">賃貸ガイド</span>
+                            <span class="link-zh" style="display:none">租房指南</span>
+                            <span class="link-en" style="display:none">Rental Guide</span>
+                        </a></li>
+                        <li><a href="purchase-guide.html">
+                            <span class="link-ja">購入ガイド</span>
+                            <span class="link-zh" style="display:none">购房指南</span>
+                            <span class="link-en" style="display:none">Purchase Guide</span>
+                        </a></li>
+                        <li><a href="faq.html">
+                            <span class="link-ja">よくある質問</span>
+                            <span class="link-zh" style="display:none">常见问题</span>
+                            <span class="link-en" style="display:none">FAQ</span>
+                        </a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">
+                        <span class="footer-title-ja">会社情報</span>
+                        <span class="footer-title-zh" style="display:none">公司信息</span>
+                        <span class="footer-title-en" style="display:none">Company</span>
+                    </h3>
+                    <ul class="footer-links">
+                        <li><a href="company.html">
+                            <span class="link-ja">会社概要</span>
+                            <span class="link-zh" style="display:none">公司概况</span>
+                            <span class="link-en" style="display:none">Company Overview</span>
+                        </a></li>
+                        <li><a href="team.html">
+                            <span class="link-ja">スタッフ紹介</span>
+                            <span class="link-zh" style="display:none">团队介绍</span>
+                            <span class="link-en" style="display:none">Team Introduction</span>
+                        </a></li>
+                        <li><a href="franchise.html">
+                            <span class="link-ja">FC加盟</span>
+                            <span class="link-zh" style="display:none">加盟招募</span>
+                            <span class="link-en" style="display:none">Franchise</span>
+                        </a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">
+                        <span class="footer-title-ja">お問い合わせ</span>
+                        <span class="footer-title-zh" style="display:none">联系我们</span>
+                        <span class="footer-title-en" style="display:none">Contact</span>
+                    </h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="contact-label">
+                                <span class="contact-label-ja">本店:</span>
+                                <span class="contact-label-zh" style="display:none">总部:</span>
+                                <span class="contact-label-en" style="display:none">Head Office:</span>
+                            </span>
+                            <span class="contact-value">03-6457-6386</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">
+                                <span class="contact-label-ja">新小岩支店:</span>
+                                <span class="contact-label-zh" style="display:none">新小岩分店:</span>
+                                <span class="contact-label-en" style="display:none">Shinkoiwa Branch:</span>
+                            </span>
+                            <span class="contact-value">03-6662-8772</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">
+                                <span class="contact-label-ja">営業時間:</span>
+                                <span class="contact-label-zh" style="display:none">营业时间:</span>
+                                <span class="contact-label-en" style="display:none">Business Hours:</span>
+                            </span>
+                            <span class="contact-value">10:00-19:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <span class="copyright-ja">© 2025 株式会社日清不動産. All rights reserved.</span>
+                    <span class="copyright-zh" style="display:none">© 2025 日清不动产有限公司. 保留所有权利.</span>
+                    <span class="copyright-en" style="display:none">© 2025 Nisshin Real Estate Co., Ltd. All rights reserved.</span>
+                </div>
+
+                <div class="footer-links-bottom">
+                    <a href="privacy.html">
+                        <span class="link-ja">プライバシーポリシー</span>
+                        <span class="link-zh" style="display:none">隐私政策</span>
+                        <span class="link-en" style="display:none">Privacy Policy</span>
+                    </a>
+                    <a href="terms.html">
+                        <span class="link-ja">利用規約</span>
+                        <span class="link-zh" style="display:none">使用条款</span>
+                        <span class="link-en" style="display:none">Terms of Service</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

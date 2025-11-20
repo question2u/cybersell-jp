@@ -1,0 +1,996 @@
+/* ===== 房源搜索页面样式 ===== */
+
+/* ===== 页面标题区 ===== */
+.page-header {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, #0F172A 100%);
+    color: var(--bg-primary);
+    padding: calc(80px + var(--space-3xl)) 0 var(--space-2xl);
+    text-align: center;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    font-size: 14px;
+    margin-bottom: var(--space-lg);
+    opacity: 0.9;
+}
+
+.breadcrumb a {
+    color: var(--bg-primary);
+    text-decoration: none;
+    transition: var(--transition-normal);
+}
+
+.breadcrumb a:hover {
+    opacity: 0.8;
+}
+
+.breadcrumb-separator {
+    color: var(--text-muted);
+    font-size: 18px;
+}
+
+.breadcrumb-current {
+    color: var(--accent-gold);
+    font-weight: 600;
+}
+
+.page-title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: var(--space-md);
+    line-height: 1.2;
+}
+
+.page-subtitle {
+    font-size: 20px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ===== 搜索区域 ===== */
+.search-section {
+    background-color: var(--bg-secondary);
+    padding: var(--space-2xl) 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* 搜索切换标签 */
+.search-tabs {
+    display: flex;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xl);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: var(--space-md) var(--space-xl);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: var(--transition-normal);
+    font-weight: 500;
+    font-size: 14px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tab-btn:hover {
+    background-color: var(--bg-tertiary);
+    border-color: var(--primary-dark);
+}
+
+.tab-btn.active {
+    background-color: var(--primary-dark);
+    color: var(--bg-primary);
+    border-color: var(--primary-dark);
+}
+
+/* 搜索表单容器 */
+.search-form-container {
+    background-color: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+}
+
+.search-form {
+    display: none;
+    padding: var(--space-xl);
+}
+
+.search-form.active {
+    display: block;
+}
+
+/* 搜索行布局 */
+.search-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 14px;
+}
+
+.search-input,
+.search-select {
+    padding: var(--space-md);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    transition: var(--transition-normal);
+    background-color: var(--bg-primary);
+    min-height: 44px;
+}
+
+.search-input:focus,
+.search-select:focus {
+    outline: none;
+    border-color: var(--primary-dark);
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}
+
+.search-input::placeholder {
+    color: var(--text-muted);
+}
+
+/* 搜索操作按钮 */
+.search-actions {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.search-actions .btn {
+    min-width: 150px;
+}
+
+/* 特殊条件 */
+.special-conditions {
+    margin-bottom: var(--space-xl);
+    padding: var(--space-lg);
+    background-color: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+}
+
+.conditions-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: var(--space-md);
+}
+
+.conditions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-md);
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    cursor: pointer;
+    padding: var(--space-sm);
+    border-radius: var(--radius-sm);
+    transition: var(--transition-normal);
+    font-size: 14px;
+}
+
+.checkbox-label:hover {
+    background-color: var(--bg-secondary);
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary-dark);
+}
+
+/* VR搜索特性 */
+.vr-search-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-xl);
+    margin-bottom: var(--space-xl);
+}
+
+.vr-feature {
+    display: flex;
+    gap: var(--space-lg);
+    padding: var(--space-lg);
+    background-color: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+}
+
+.feature-icon {
+    font-size: 32px;
+    min-width: 32px;
+    color: var(--accent-green);
+}
+
+.feature-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: var(--space-sm);
+}
+
+.feature-description {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.vr-filter {
+    display: flex;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+    align-items: end;
+}
+
+/* ===== 搜索结果区域 ===== */
+.results-section {
+    padding: var(--space-2xl) 0;
+    background-color: var(--bg-primary);
+}
+
+/* 结果概要 */
+.results-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-xl);
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+}
+
+.results-info h2 {
+    font-size: 32px;
+    margin-bottom: var(--space-sm);
+}
+
+.results-count {
+    font-size: 16px;
+    color: var(--text-secondary);
+}
+
+.results-actions {
+    display: flex;
+    gap: var(--space-lg);
+    align-items: center;
+}
+
+/* 视图切换 */
+.view-toggle {
+    display: flex;
+    background-color: var(--bg-secondary);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.view-btn {
+    padding: var(--space-sm) var(--space-md);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-normal);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.view-btn:hover {
+    background-color: var(--bg-tertiary);
+}
+
+.view-btn.active {
+    background-color: var(--primary-dark);
+    color: var(--bg-primary);
+}
+
+.view-icon {
+    font-size: 16px;
+}
+
+/* 排序选项 */
+.sort-options {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.sort-options label {
+    font-weight: 500;
+    color: var(--text-primary);
+    font-size: 14px;
+}
+
+.sort-select {
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background-color: var(--bg-primary);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* 推荐标签 */
+.recommended-tags {
+    margin-bottom: var(--space-xl);
+    padding: var(--space-lg);
+    background-color: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+}
+
+.tags-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: var(--space-md);
+}
+
+.tags-container {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+}
+
+.tag-btn {
+    padding: var(--space-sm) var(--space-md);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: var(--transition-normal);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.tag-btn:hover {
+    background-color: var(--primary-dark);
+    color: var(--bg-primary);
+    border-color: var(--primary-dark);
+}
+
+.tag-btn.active {
+    background-color: var(--accent-gold);
+    color: var(--bg-primary);
+    border-color: var(--accent-gold);
+}
+
+/* ===== 房源网格 ===== */
+.properties-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--space-xl);
+    margin-bottom: var(--space-2xl);
+}
+
+/* 房源卡片 */
+.property-card {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: var(--transition-normal);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+}
+
+.property-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.property-images {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    background-color: var(--bg-secondary);
+}
+
+.property-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.property-badges {
+    position: absolute;
+    top: var(--space-sm);
+    left: var(--space-sm);
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+}
+
+.badge {
+    padding: var(--space-xs) var(--space-sm);
+    background-color: rgba(30, 58, 138, 0.9);
+    color: var(--bg-primary);
+    border-radius: var(--radius-full);
+    font-size: 12px;
+    font-weight: 500;
+    backdrop-filter: blur(4px);
+}
+
+.badge.vr {
+    background-color: rgba(16, 185, 129, 0.9);
+}
+
+.badge.new {
+    background-color: rgba(245, 158, 11, 0.9);
+}
+
+.badge.no-guarantor {
+    background-color: rgba(239, 68, 68, 0.9);
+}
+
+.property-actions {
+    position: absolute;
+    top: var(--space-sm);
+    right: var(--space-sm);
+    display: flex;
+    gap: var(--space-sm);
+}
+
+.action-btn {
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: var(--transition-normal);
+    backdrop-filter: blur(4px);
+}
+
+.action-btn:hover {
+    background-color: var(--bg-primary);
+    transform: scale(1.1);
+}
+
+.action-btn.liked {
+    background-color: rgba(239, 68, 68, 0.9);
+    color: var(--bg-primary);
+}
+
+.property-content {
+    padding: var(--space-lg);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.property-header {
+    margin-bottom: var(--space-md);
+}
+
+.property-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: var(--space-xs);
+    line-height: 1.3;
+}
+
+.property-address {
+    font-size: 14px;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.property-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.detail-icon {
+    color: var(--primary-dark);
+    font-size: 16px;
+}
+
+.property-price {
+    margin-bottom: var(--space-lg);
+}
+
+.price-row {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xs);
+}
+
+.price-main {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+.price-unit {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.price-note {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.property-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-top: auto;
+}
+
+.feature-tag {
+    padding: var(--space-xs) var(--space-sm);
+    background-color: var(--bg-tertiary);
+    color: var(--text-secondary);
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.property-footer {
+    display: flex;
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-btn {
+    flex: 1;
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background: none;
+    cursor: pointer;
+    transition: var(--transition-normal);
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xs);
+}
+
+.footer-btn:hover {
+    background-color: var(--bg-tertiary);
+}
+
+.footer-btn.primary {
+    background-color: var(--primary-dark);
+    color: var(--bg-primary);
+    border-color: var(--primary-dark);
+}
+
+.footer-btn.primary:hover {
+    background-color: var(--primary-light);
+}
+
+/* ===== 分页 ===== */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.pagination-btn {
+    padding: var(--space-md) var(--space-lg);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition-normal);
+    font-size: 14px;
+    font-weight: 500;
+    min-width: 80px;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    background-color: var(--bg-tertiary);
+    border-color: var(--primary-dark);
+}
+
+.pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pagination-numbers {
+    display: flex;
+    gap: var(--space-xs);
+}
+
+.page-btn {
+    width: 40px;
+    height: 40px;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition-normal);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.page-btn:hover {
+    background-color: var(--bg-tertiary);
+    border-color: var(--primary-dark);
+}
+
+.page-btn.active {
+    background-color: var(--primary-dark);
+    color: var(--bg-primary);
+    border-color: var(--primary-dark);
+}
+
+.pagination-ellipsis {
+    padding: 0 var(--space-sm);
+    color: var(--text-muted);
+}
+
+/* ===== 房源详情弹窗 ===== */
+.property-modal {
+    max-width: 900px;
+    width: 95%;
+    max-height: 90vh;
+}
+
+.property-modal .modal-body {
+    max-height: calc(90vh - 80px);
+    overflow-y: auto;
+}
+
+/* ===== 地图视图 ===== */
+.map-container {
+    height: 600px;
+    background-color: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    position: relative;
+}
+
+.map-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--text-secondary);
+}
+
+.map-loading .spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--border-color);
+    border-top: 4px solid var(--primary-dark);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: var(--space-md);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ===== 加载状态 ===== */
+.loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--border-color);
+    border-top: 4px solid var(--primary-dark);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: var(--space-md);
+}
+
+.loading-text {
+    font-size: 16px;
+    color: var(--text-secondary);
+}
+
+/* ===== 空状态 ===== */
+.empty-state {
+    text-align: center;
+    padding: var(--space-4xl);
+    color: var(--text-secondary);
+}
+
+.empty-icon {
+    font-size: 64px;
+    margin-bottom: var(--space-lg);
+    opacity: 0.5;
+}
+
+.empty-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-md);
+}
+
+.empty-description {
+    font-size: 16px;
+    margin-bottom: var(--space-xl);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ===== 响应式设计 ===== */
+
+/* 大屏幕优化 */
+@media (min-width: 1200px) {
+    .properties-grid {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+}
+
+/* 中等屏幕 */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .page-title {
+        font-size: 36px;
+    }
+
+    .search-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .results-summary {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-md);
+    }
+
+    .results-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .properties-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-lg);
+    }
+
+    .vr-search-features {
+        grid-template-columns: 1fr;
+    }
+
+    .conditions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 小屏幕 */
+@media (max-width: 767px) {
+    .page-header {
+        padding: calc(70px + var(--space-2xl)) var(--space-sm) var(--space-lg);
+    }
+
+    .page-title {
+        font-size: 28px;
+    }
+
+    .page-subtitle {
+        font-size: 16px;
+    }
+
+    .search-tabs {
+        flex-direction: column;
+    }
+
+    .tab-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .search-form {
+        padding: var(--space-lg);
+    }
+
+    .search-row {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    .vr-search-features {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+
+    .vr-feature {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .vr-filter {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .results-summary {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-md);
+    }
+
+    .results-info h2 {
+        font-size: 24px;
+    }
+
+    .results-actions {
+        width: 100%;
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    .view-toggle {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .sort-options {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .recommended-tags {
+        padding: var(--space-md);
+    }
+
+    .tags-container {
+        justify-content: center;
+    }
+
+    .properties-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+
+    .property-badges {
+        position: static;
+        margin-bottom: var(--space-md);
+    }
+
+    .property-actions {
+        position: static;
+        justify-content: flex-end;
+        margin-bottom: var(--space-md);
+    }
+
+    .property-footer {
+        flex-direction: column;
+    }
+
+    .pagination {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    .pagination-numbers {
+        order: -1;
+    }
+}
+
+/* 超小屏幕 */
+@media (max-width: 479px) {
+    .search-form {
+        padding: var(--space-md);
+    }
+
+    .special-conditions {
+        padding: var(--space-md);
+    }
+
+    .conditions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tags-container {
+        gap: var(--space-xs);
+    }
+
+    .tag-btn {
+        font-size: 12px;
+        padding: var(--space-xs) var(--space-sm);
+    }
+}
+
+/* 打印样式 */
+@media print {
+    .search-section,
+    .recommended-tags,
+    .pagination,
+    .property-actions,
+    .property-footer,
+    .navbar,
+    .footer {
+        display: none !important;
+    }
+
+    .page-header {
+        background: none !important;
+        color: var(--text-primary) !important;
+        padding: var(--space-lg) 0 !important;
+    }
+
+    .results-section {
+        padding: var(--space-lg) 0 !important;
+    }
+
+    .properties-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: var(--space-md) !important;
+    }
+
+    .property-card {
+        break-inside: avoid;
+        box-shadow: none !important;
+        border: 1px solid var(--border-color) !important;
+        margin-bottom: var(--space-md);
+    }
+}

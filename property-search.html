@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>物件検索 | 日清不动产</title>
+    <meta name="description" content="8语言支持的房产搜索系统，VR看房、无需保证人、外国人在日租房买房的首选平台。">
+    <meta name="keywords" content="物件検索,賃貸,売買,VR内見,外国人対応,保証人不要">
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/property-search.css">
+    <script src="js/main.js" defer></script>
+    <script src="js/property-search.js" defer></script>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo">
+                    <span class="logo-ja">日清不動産</span>
+                    <span class="logo-en">NISSHIN REAL ESTATE</span>
+                </a>
+            </div>
+
+            <!-- 语言切换 -->
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="ja" title="日本語">🇯🇵</button>
+                <button class="lang-btn" data-lang="zh" title="中文">🇨🇳</button>
+                <button class="lang-btn" data-lang="en" title="English">🇬🇧</button>
+                <button class="lang-btn" data-lang="fr" title="Français">🇫🇷</button>
+                <button class="lang-btn" data-lang="vi" title="Tiếng Việt">🇻🇳</button>
+                <button class="lang-btn" data-lang="ko" title="한국어">🇰🇷</button>
+                <button class="lang-btn" data-lang="mn" title="Монгол">🇲🇳</button>
+                <button class="lang-btn" data-lang="my" title="Bahasa Melayu">🇲🇾</button>
+            </div>
+
+            <!-- 桌面端导航菜单 -->
+            <div class="nav-menu desktop-menu">
+                <ul>
+                    <li><a href="index.html#services">サービス</a></li>
+                    <li><a href="index.html#advantages">DXの強み</a></li>
+                    <li><a href="property-search.html" class="active">物件検索</a></li>
+                    <li><a href="index.html#testimonials">お客様の声</a></li>
+                    <li><a href="index.html#guide">外国人ガイド</a></li>
+                    <li><a href="index.html#company">会社情報</a></li>
+                    <li><a href="index.html#contact">お問い合わせ</a></li>
+                </ul>
+            </div>
+
+            <!-- 汉堡菜单按钮 -->
+            <button class="hamburger-menu" id="hamburgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <!-- 移动端导航菜单 -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html#services">サービス</a></li>
+                <li><a href="index.html#advantages">DXの強み</a></li>
+                <li><a href="property-search.html" class="active">物件検索</a></li>
+                <li><a href="index.html#testimonials">お客様の声</a></li>
+                <li><a href="index.html#guide">外国人ガイド</a></li>
+                <li><a href="index.html#company">会社情報</a></li>
+                <li><a href="index.html#contact">お問い合わせ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 页面标题区 -->
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">
+                    <span class="breadcrumb-ja">ホーム</span>
+                    <span class="breadcrumb-zh" style="display:none">首页</span>
+                    <span class="breadcrumb-en" style="display:none">Home</span>
+                </a>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-current">
+                    <span class="current-ja">物件検索</span>
+                    <span class="current-zh" style="display:none">房源搜索</span>
+                    <span class="current-en" style="display:none">Property Search</span>
+                </span>
+            </div>
+
+            <h1 class="page-title">
+                <span class="title-ja">物件検索</span>
+                <span class="title-zh" style="display:none">房源搜索</span>
+                <span class="title-en" style="display:none">Property Search</span>
+            </h1>
+
+            <p class="page-subtitle">
+                <span class="subtitle-ja">VR内見・8言語対応・保証人不要物件多数</span>
+                <span class="subtitle-zh" style="display:none">VR看房・8语言支持・无需保证人房源众多</span>
+                <span class="subtitle-en" style="display:none">VR Tours · 8 Languages · Many No-Guarantor Properties</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- 搜索区域 -->
+    <section class="search-section">
+        <div class="container">
+            <!-- 搜索切换标签 -->
+            <div class="search-tabs">
+                <button class="tab-btn active" data-tab="basic">
+                    <span class="tab-ja">基本検索</span>
+                    <span class="tab-zh" style="display:none">基本搜索</span>
+                    <span class="tab-en" style="display:none">Basic Search</span>
+                </button>
+                <button class="tab-btn" data-tab="advanced">
+                    <span class="tab-ja">詳細検索</span>
+                    <span class="tab-zh" style="display:none">详细搜索</span>
+                    <span class="tab-en" style="display:none">Advanced Search</span>
+                </button>
+                <button class="tab-btn" data-tab="commute">
+                    <span class="tab-ja">通勤時間検索</span>
+                    <span class="tab-zh" style="display:none">通勤时间搜索</span>
+                    <span class="tab-en" style="display:none">Commute Search</span>
+                </button>
+                <button class="tab-btn" data-tab="vr">
+                    <span class="tab-ja">VR対応物件</span>
+                    <span class="tab-zh" style="display:none">VR房源</span>
+                    <span class="tab-en" style="display:none">VR Properties</span>
+                </button>
+            </div>
+
+            <!-- 搜索表单 -->
+            <div class="search-form-container">
+                <!-- 基本搜索 -->
+                <div class="search-form active" id="basic-search">
+                    <form class="property-search-form">
+                        <div class="search-row">
+                            <div class="form-group">
+                                <label>
+                                    <span class="label-ja">エリア</span>
+                                    <span class="label-zh" style="display:none">地区</span>
+                                    <span class="label-en" style="display:none">Area</span>
+                                </label>
+                                <select name="area" class="search-select">
+                                    <option value="">
+                                        <span class="option-ja">選択してください</span>
+                                        <span class="option-zh" style="display:none">请选择</span>
+                                        <span class="option-en" style="display:none">Please select</span>
+                                    </option>
+                                    <option value="tokyo-23">
+                                        <span class="option-ja">東京23区</span>
+                                        <span class="option-zh" style="display:none">东京23区</span>
+                                        <span class="option-en" style="display:none">Tokyo 23 Wards</span>
+                                    </option>
+                                    <option value="kanagawa">
+                                        <span class="option-ja">神奈川県</span>
+                                        <span class="option-zh" style="display:none">神奈川县</span>
+                                        <span class="option-en" style="display:none">Kanagawa Pref.</span>
+                                    </option>
+                                    <option value="saitama">
+                                        <span class="option-ja">埼玉県</span>
+                                        <span class="option-zh" style="display:none">埼玉县</span>
+                                        <span class="option-en" style="display:none">Saitama Pref.</span>
+                                    </option>
+                                    <option value="chiba">
+                                        <span class="option-ja">千葉県</span>
+                                        <span class="option-zh" style="display:none">千叶县</span>
+                                        <span class="option-en" style="display:none">Chiba Pref.</span>
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    <span class="label-ja">家賃</span>
+                                    <span class="label-zh" style="display:none">租金</span>
+                                    <span class="label-en" style="display:none">Rent</span>
+                                </label>
+                                <select name="price" class="search-select">
+                                    <option value="">
+                                        <span class="option-ja">選択してください</span>
+                                        <span class="option-zh" style="display:none">请选择</span>
+                                        <span class="option-en" style="display:none">Please select</span>
+                                    </option>
+                                    <option value="5-10">5-10万円</option>
+                                    <option value="10-15">10-15万円</option>
+                                    <option value="15-20">15-20万円</option>
+                                    <option value="20-30">20-30万円</option>
+                                    <option value="30+">30万円以上</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    <span class="label-ja">間取り</span>
+                                    <span class="label-zh" style="display:none">户型</span>
+                                    <span class="label-en" style="display:none">Layout</span>
+                                </label>
+                                <select name="layout" class="search-select">
+                                    <option value="">
+                                        <span class="option-ja">選択してください</span>
+                                        <span class="option-zh" style="display:none">请选择</span>
+                                        <span class="option-en" style="display:none">Please select</span>
+                                    </option>
+                                    <option value="1r">1R</option>
+                                    <option value="1k">1K</option>
+                                    <option value="1dk">1DK</option>
+                                    <option value="1ldk">1LDK</option>
+                                    <option value="2k">2K</option>
+                                    <option value="2dk">2DK</option>
+                                    <option value="2ldk">2LDK</option>
+                                    <option value="3ldk">3LDK+</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    <span class="label-ja">専有面積</span>
+                                    <span class="label-zh" style="display:none">专有面积</span>
+                                    <span class="label-en" style="display:none">Area</span>
+                                </label>
+                                <select name="area-size" class="search-select">
+                                    <option value="">
+                                        <span class="option-ja">選択してください</span>
+                                        <span class="option-zh" style="display:none">请选择</span>
+                                        <span class="option-en" style="display:none">Please select</span>
+                                    </option>
+                                    <option value="20-30">20-30㎡</option>
+                                    <option value="30-40">30-40㎡</option>
+                                    <option value="40-50">40-50㎡</option>
+                                    <option value="50-60">50-60㎡</option>
+                                    <option value="60+">60㎡以上</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="search-actions">
+                            <button type="submit" class="btn btn-primary">
+                                <span class="btn-icon">🔍</span>
+                                <span class="btn-ja">検索</span>
+                                <span class="btn-zh" style="display:none">搜索</span>
+                                <span class="btn-en" style="display:none">Search</span>
+                            </button>
+                            <button type="button" class="btn btn-secondary" id="resetSearch">
+                                <span class="btn-ja">リセット</span>
+                                <span class="btn-zh" style="display:none">重置</span>
+                                <span class="btn-en" style="display:none">Reset</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- 详细搜索 -->
+                <div class="search-form" id="advanced-search">
+                    <form class="property-search-form">
+                        <div class="search-row">
+                            <div class="form-group">
+                                <label>
+                                    <span class="label-ja">最寄り駅</span>
+                                    <span class="label-zh" style="display:none">最近车站</span>
+                                    <span class="label-en" style="display:none">Nearest Station</span>
+                                </label>
+                                <input type="text" name="station" placeholder="例：新宿、渋谷、東京" class="search-input">
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    <span class="label-ja">築年数</span>
+                                    <span class="label-zh" style="display:none">楼龄</span>
+                                    <span class="label-en" style="display:none">Building Age</span>
+                                </label>
+                                <select name="age" class="search-select">
+                                    <option value="">指定なし</option>
+                                    <option value="new">新築</option>
+                                    <option value="3">3年以内</option>
+                                    <option value="5">5年以内</option>
+                                    <option value="10">10年以内</option>
+                                    <option value="15">15年以内</option>
+                                    <option value="20">20年以内</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    <span class="label-ja">階数</span>
+                                    <span class="label-zh" style="display:none">楼层</span>
+                                    <span class="label-en" style="display:none">Floor</span>
+                                </label>
+                                <select name="floor" class="search-select">
+                                    <option value="">指定なし</option>
+                                    <option value="1">1階</option>
+                                    <option value="2-3">2-3階</option>
+                                    <option value="4-5">4-5階</option>
+                                    <option value="6+">6階以上</option>
+                                    <option value="top">最上階</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    <span class="label-ja">向き</span>
+                                    <span class="label-zh" style="display:none">朝向</span>
+                                    <span class="label-en" style="display:none">Direction</span>
+                                </label>
+                                <select name="direction" class="search-select">
+                                    <option value="">指定なし</option>
+                                    <option value="south">南向き</option>
+                                    <option value="south-east">南東向き</option>
+                                    <option value="south-west">南西向き</option>
+                                    <option value="east">東向き</option>
+                                    <option value="west">西向き</option>
+                                    <option value="north">北向き</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- 特殊条件 -->
+                        <div class="special-conditions">
+                            <h3 class="conditions-title">
+                                <span class="conditions-ja">特殊条件</span>
+                                <span class="conditions-zh" style="display:none">特殊条件</span>
+                                <span class="conditions-en" style="display:none">Special Conditions</span>
+                            </h3>
+                            <div class="conditions-grid">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="no-guarantor" value="1">
+                                    <span class="check-ja">保証人不要</span>
+                                    <span class="check-zh" style="display:none">无需保证人</span>
+                                    <span class="check-en" style="display:none">No Guarantor</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="furniture" value="1">
+                                    <span class="check-ja">家具家電付き</span>
+                                    <span class="check-zh" style="display:none">家具家电齐全</span>
+                                    <span class="check-en" style="display:none">Furnished</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="parking" value="1">
+                                    <span class="check-ja">駐車場あり</span>
+                                    <span class="check-zh" style="display:none">有停车位</span>
+                                    <span class="check-en" style="display:none">Parking</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="bike-parking" value="1">
+                                    <span class="check-ja">駐輪場あり</span>
+                                    <span class="check-zh" style="display:none">有自行车位</span>
+                                    <span class="check-en" style="display:none">Bike Parking</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="pet" value="1">
+                                    <span class="check-ja">ペット可</span>
+                                    <span class="check-zh" style="display:none">允许宠物</span>
+                                    <span class="check-en" style="display:none">Pets OK</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="internet" value="1">
+                                    <span class="check-ja">インターネット無料</span>
+                                    <span class="check-zh" style="display:none">免费网络</span>
+                                    <span class="check-en" style="display:none">Free Internet</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="musical" value="1">
+                                    <span class="check-ja">楽器可</span>
+                                    <span class="check-zh" style="display:none">允许乐器</span>
+                                    <span class="check-en" style="display:none">Musical Instruments OK</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="two-people" value="1">
+                                    <span class="check-ja">二人入居可</span>
+                                    <span class="check-zh" style="display:none">两人入住</span>
+                                    <span class="check-en" style="display:none">Two People OK</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="search-actions">
+                            <button type="submit" class="btn btn-primary">
+                                <span class="btn-icon">🔍</span>
+                                <span class="btn-ja">詳細検索</span>
+                                <span class="btn-zh" style="display:none">详细搜索</span>
+                                <span class="btn-en" style="display:none">Advanced Search</span>
+                            </button>
+                            <button type="button" class="btn btn-secondary" id="resetAdvanced">
+                                <span class="btn-ja">リセット</span>
+                                <span class="btn-zh" style="display:none">重置</span>
+                                <span class="btn-en" style="display:none">Reset</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- 通勤时间搜索 -->
+                <div class="search-form" id="commute-search">
+                    <form class="commute-search-form">
+                        <div class="search-row">
+                            <div class="form-group">
+                                <label>
+                                    <span class="label-ja">勤務先（駅名）</span>
+                                    <span class="label-zh" style="display:none">工作地点（站名）</span>
+                                    <span class="label-en" style="display:none">Workplace (Station)</span>
+                                </label>
+                                <input type="text" name="workplace" placeholder="例：東京、新宿、渋谷" class="search-input" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    <span class="label-ja">通勤時間</span>
+                                    <span class="label-zh" style="display:none">通勤时间</span>
+                                    <span class="label-en" style="display:none">Commute Time</span>
+                                </label>
+                                <select name="commute-time" class="search-select" required>
+                                    <option value="">選択してください</option>
+                                    <option value="15">15分以内</option>
+                                    <option value="30">30分以内</option>
+                                    <option value="45">45分以内</option>
+                                    <option value="60">60分以内</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    <span class="label-ja">沿線優先</span>
+                                    <span class="label-zh" style="display:none">线路优先</span>
+                                    <span class="label-en" style="display:none">Line Priority</span>
+                                </label>
+                                <select name="line" class="search-select">
+                                    <option value="">指定なし</option>
+                                    <option value="jr-yamanote">JR山手線</option>
+                                    <option value="jr-chuo">JR中央線</option>
+                                    <option value="jr-keihin-tohoku">JR京浜東北線</option>
+                                    <option value="tokyo-metro">東京メトロ</option>
+                                    <option value="keio">京王線</option>
+                                    <option value="odakyu">小田急線</option>
+                                    <option value="keikyu">京急線</option>
+                                    <option value="tokyu">東急線</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    <span class="label-ja">家賃</span>
+                                    <span class="label-zh" style="display:none">租金</span>
+                                    <span class="label-en" style="display:none">Rent</span>
+                                </label>
+                                <select name="price" class="search-select">
+                                    <option value="">選択してください</option>
+                                    <option value="5-10">5-10万円</option>
+                                    <option value="10-15">10-15万円</option>
+                                    <option value="15-20">15-20万円</option>
+                                    <option value="20-30">20-30万円</option>
+                                    <option value="30+">30万円以上</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="search-actions">
+                            <button type="submit" class="btn btn-primary">
+                                <span class="btn-icon">🚇</span>
+                                <span class="btn-ja">通勤時間で検索</span>
+                                <span class="btn-zh" style="display:none">通勤时间搜索</span>
+                                <span class="btn-en" style="display:none">Commute Search</span>
+                            </button>
+                            <button type="button" class="btn btn-secondary" id="resetCommute">
+                                <span class="btn-ja">リセット</span>
+                                <span class="btn-zh" style="display:none">重置</span>
+                                <span class="btn-en" style="display:none">Reset</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- VR房源 -->
+                <div class="search-form" id="vr-search">
+                    <form class="vr-search-form">
+                        <div class="vr-search-features">
+                            <div class="vr-feature">
+                                <div class="feature-icon">🥽</div>
+                                <div class="feature-content">
+                                    <h3 class="feature-title">
+                                        <span class="feature-title-ja">360°完全内見</span>
+                                        <span class="feature-title-zh" style="display:none">360°完全看房</span>
+                                        <span class="feature-title-en" style="display:none">360° Complete Viewing</span>
+                                    </h3>
+                                    <p class="feature-description">
+                                        <span class="feature-desc-ja">24時間いつでも、どこでも物件を詳細に確認できます。</span>
+                                        <span class="feature-desc-zh" style="display:none">24小时随时， anywhere详细确认房源。</span>
+                                        <span class="feature-desc-en" style="display:none">View properties in detail anytime, anywhere 24/7.</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="vr-feature">
+                                <div class="feature-icon">🏠</div>
+                                <div class="feature-content">
+                                    <h3 class="feature-title">
+                                        <span class="feature-title-ja">海外からも見学可能</span>
+                                        <span class="feature-title-zh" style="display:none">海外也可看房</span>
+                                        <span class="feature-title-en" style="display:none">View from Overseas</span>
+                                    </h3>
+                                    <p class="feature-description">
+                                        <span class="feature-desc-ja">日本に来る前に、理想の住まいを見つけることができます。</span>
+                                        <span class="feature-desc-zh" style="display:none">来日本前就能找到理想住所。</span>
+                                        <span class="feature-desc-en" style="display:none">Find your ideal home before coming to Japan.</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="vr-feature">
+                                <div class="feature-icon">📱</div>
+                                <div class="feature-content">
+                                    <h3 class="feature-title">
+                                        <span class="feature-title-ja">多デバイス対応</span>
+                                        <span class="feature-title-zh" style="display:none">多设备支持</span>
+                                        <span class="feature-title-en" style="display:none">Multi-device Support</span>
+                                    </h3>
+                                    <p class="feature-description">
+                                        <span class="feature-desc-ja">スマートフォン、タブレット、PC、VRゴーグルで体験できます。</span>
+                                        <span class="feature-desc-zh" style="display:none">手机、平板、电脑、VR眼镜都可以体验。</span>
+                                        <span class="feature-desc-en" style="display:none">Experience on smartphone, tablet, PC, VR goggles.</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="vr-filter">
+                            <div class="form-group">
+                                <label>
+                                    <span class="label-ja">エリア</span>
+                                    <span class="label-zh" style="display:none">地区</span>
+                                    <span class="label-en" style="display:none">Area</span>
+                                </label>
+                                <select name="area" class="search-select">
+                                    <option value="">選択してください</option>
+                                    <option value="tokyo-23">東京23区</option>
+                                    <option value="kanagawa">神奈川県</option>
+                                    <option value="saitama">埼玉県</option>
+                                    <option value="chiba">千葉県</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    <span class="label-ja">家賃</span>
+                                    <span class="label-zh" style="display:none">租金</span>
+                                    <span class="label-en" style="display:none">Rent</span>
+                                </label>
+                                <select name="price" class="search-select">
+                                    <option value="">選択してください</option>
+                                    <option value="5-15">5-15万円</option>
+                                    <option value="15-25">15-25万円</option>
+                                    <option value="25-35">25-35万円</option>
+                                    <option value="35+">35万円以上</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="search-actions">
+                            <button type="submit" class="btn btn-primary">
+                                <span class="btn-icon">🚀</span>
+                                <span class="btn-ja">VR対応物件を検索</span>
+                                <span class="btn-zh" style="display:none">搜索VR房源</span>
+                                <span class="btn-en" style="display:none">Search VR Properties</span>
+                            </button>
+                            <a href="#vr-demo" class="btn btn-secondary">
+                                <span class="btn-icon">🎮</span>
+                                <span class="btn-ja">VRデモを体験</span>
+                                <span class="btn-zh" style="display:none">体验VR演示</span>
+                                <span class="btn-en" style="display:none">Try VR Demo</span>
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 搜索结果 -->
+    <section class="results-section" id="results">
+        <div class="container">
+            <!-- 结果概要 -->
+            <div class="results-summary">
+                <div class="results-info">
+                    <h2 class="results-title">
+                        <span class="title-ja">検索結果</span>
+                        <span class="title-zh" style="display:none">搜索结果</span>
+                        <span class="title-en" style="display:none">Search Results</span>
+                    </h2>
+                    <p class="results-count">
+                        <span class="count-ja">1,234件の物件が見つかりました</span>
+                        <span class="count-zh" style="display:none">找到1,234套房源</span>
+                        <span class="count-en" style="display:none">Found 1,234 properties</span>
+                    </p>
+                </div>
+
+                <div class="results-actions">
+                    <div class="view-toggle">
+                        <button class="view-btn active" data-view="grid">
+                            <span class="view-icon">⊞</span>
+                            <span class="view-text-ja">一覧</span>
+                            <span class="view-text-zh" style="display:none">列表</span>
+                            <span class="view-text-en" style="display:none">Grid</span>
+                        </button>
+                        <button class="view-btn" data-view="map">
+                            <span class="view-icon">🗺️</span>
+                            <span class="view-text-ja">地図</span>
+                            <span class="view-text-zh" style="display:none">地图</span>
+                            <span class="view-text-en" style="display:none">Map</span>
+                        </button>
+                    </div>
+
+                    <div class="sort-options">
+                        <label>
+                            <span class="label-ja">並び替え</span>
+                            <span class="label-zh" style="display:none">排序</span>
+                            <span class="label-en" style="display:none">Sort by</span>
+                        </label>
+                        <select id="sortSelect" class="sort-select">
+                            <option value="new">
+                                <span class="option-ja">新着順</span>
+                                <span class="option-zh" style="display:none">最新</span>
+                                <span class="option-en" style="display:none">Newest</span>
+                            </option>
+                            <option value="price-low">
+                                <span class="option-ja">価格が安い順</span>
+                                <span class="option-zh" style="display:none">价格从低到高</span>
+                                <span class="option-en" style="display:none">Price Low to High</span>
+                            </option>
+                            <option value="price-high">
+                                <span class="option-ja">価格が高い順</span>
+                                <span class="option-zh" style="display:none">价格从高到低</span>
+                                <span class="option-en" style="display:none">Price High to Low</span>
+                            </option>
+                            <option value="area-large">
+                                <span class="option-ja">面積が広い順</span>
+                                <span class="option-zh" style="display:none">面积从大到小</span>
+                                <span class="option-en" style="display:none">Area Large to Small</span>
+                            </option>
+                            <option value="station-near">
+                                <span class="option-ja">駅から近い順</span>
+                                <span class="option-zh" style="display:none">距离车站从近到远</span>
+                                <span class="option-en" style="display:none">Nearest Station</span>
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 推荐标签 -->
+            <div class="recommended-tags">
+                <h3 class="tags-title">
+                    <span class="tags-title-ja">人気の条件</span>
+                    <span class="tags-title-zh" style="display:none">热门条件</span>
+                    <span class="tags-title-en" style="display:none">Popular Filters</span>
+                </h3>
+                <div class="tags-container">
+                    <button class="tag-btn" data-tag="popular">
+                        <span class="tag-ja">🔥 人気</span>
+                        <span class="tag-zh" style="display:none">🔥 热门</span>
+                        <span class="tag-en" style="display:none">🔥 Popular</span>
+                    </button>
+                    <button class="tag-btn" data-tag="new">
+                        <span class="tag-ja">🆕 新着</span>
+                        <span class="tag-zh" style="display:none">🆕 新上架</span>
+                        <span class="tag-en" style="display:none">🆕 New</span>
+                    </button>
+                    <button class="tag-btn" data-tag="no-guarantor">
+                        <span class="tag-ja">✅ 保証人不要</span>
+                        <span class="tag-zh" style="display:none">✅ 无需保证人</span>
+                        <span class="tag-en" style="display:none">✅ No Guarantor</span>
+                    </button>
+                    <button class="tag-btn" data-tag="vr">
+                        <span class="tag-ja">🥽 VR対応</span>
+                        <span class="tag-zh" style="display:none">🥽 VR支持</span>
+                        <span class="tag-en" style="display:none">🥽 VR Available</span>
+                    </button>
+                    <button class="tag-btn" data-tag="furniture">
+                        <span class="tag-ja">🛋️ 家具付き</span>
+                        <span class="tag-zh" style="display:none">🛋️ 家具齐全</span>
+                        <span class="tag-en" style="display:none">🛋️ Furnished</span>
+                    </button>
+                    <button class="tag-btn" data-tag="near-station">
+                        <span class="tag-ja">🚇 駅近</span>
+                        <span class="tag-zh" style="display:none">🚇 近车站</span>
+                        <span class="tag-en" style="display:none">🚇 Near Station</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 房源网格 -->
+            <div class="properties-grid" id="propertiesGrid">
+                <!-- 房源卡片将通过JavaScript动态加载 -->
+            </div>
+
+            <!-- 分页 -->
+            <div class="pagination" id="pagination">
+                <button class="pagination-btn prev" disabled>
+                    <span class="btn-ja">前へ</span>
+                    <span class="btn-zh" style="display:none">上一页</span>
+                    <span class="btn-en" style="display:none">Previous</span>
+                </button>
+
+                <div class="pagination-numbers">
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <span class="pagination-ellipsis">...</span>
+                    <button class="page-btn">20</button>
+                </div>
+
+                <button class="pagination-btn next">
+                    <span class="btn-ja">次へ</span>
+                    <span class="btn-zh" style="display:none">下一页</span>
+                    <span class="btn-en" style="display:none">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 房源详情弹窗 -->
+    <div class="modal" id="propertyModal">
+        <div class="modal-content property-modal">
+            <div class="modal-header">
+                <h3 class="modal-title">物件詳細</h3>
+                <button class="modal-close" id="closePropertyModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- 内容将通过JavaScript动态加载 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-ja">日清不動産</span>
+                        <span class="logo-en">NISSHIN REAL ESTATE</span>
+                    </div>
+                    <p class="footer-description">
+                        <span class="footer-desc-ja">8言語対応・完全DX・外国人専門NO.1</span>
+                        <span class="footer-desc-zh" style="display:none">8语言对应・全程DX・外国人专属NO.1</span>
+                        <span class="footer-desc-en" style="display:none">8 Languages · Full DX · Foreigner Specialist No.1</span>
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">
+                        <span class="footer-title-ja">サービス</span>
+                        <span class="footer-title-zh" style="display:none">服务</span>
+                        <span class="footer-title-en" style="display:none">Services</span>
+                    </h3>
+                    <ul class="footer-links">
+                        <li><a href="rental.html">
+                            <span class="link-ja">賃貸サービス</span>
+                            <span class="link-zh" style="display:none">租赁服务</span>
+                            <span class="link-en" style="display:none">Rental Service</span>
+                        </a></li>
+                        <li><a href="buy-sell.html">
+                            <span class="link-ja">売買サービス</span>
+                            <span class="link-zh" style="display:none">买卖服务</span>
+                            <span class="link-en" style="display:none">Buy & Sell Service</span>
+                        </a></li>
+                        <li><a href="management.html">
+                            <span class="link-ja">管理サービス</span>
+                            <span class="link-zh" style="display:none">物业管理</span>
+                            <span class="link-en" style="display:none">Property Management</span>
+                        </a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">
+                        <span class="footer-title-ja">ガイド</span>
+                        <span class="footer-title-zh" style="display:none">指南</span>
+                        <span class="footer-title-en" style="display:none">Guides</span>
+                    </h3>
+                    <ul class="footer-links">
+                        <li><a href="rental-guide.html">
+                            <span class="link-ja">賃貸ガイド</span>
+                            <span class="link-zh" style="display:none">租房指南</span>
+                            <span class="link-en" style="display:none">Rental Guide</span>
+                        </a></li>
+                        <li><a href="purchase-guide.html">
+                            <span class="link-ja">購入ガイド</span>
+                            <span class="link-zh" style="display:none">购房指南</span>
+                            <span class="link-en" style="display:none">Purchase Guide</span>
+                        </a></li>
+                        <li><a href="faq.html">
+                            <span class="link-ja">よくある質問</span>
+                            <span class="link-zh" style="display:none">常见问题</span>
+                            <span class="link-en" style="display:none">FAQ</span>
+                        </a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">
+                        <span class="footer-title-ja">会社情報</span>
+                        <span class="footer-title-zh" style="display:none">公司信息</span>
+                        <span class="footer-title-en" style="display:none">Company</span>
+                    </h3>
+                    <ul class="footer-links">
+                        <li><a href="company.html">
+                            <span class="link-ja">会社概要</span>
+                            <span class="link-zh" style="display:none">公司概况</span>
+                            <span class="link-en" style="display:none">Company Overview</span>
+                        </a></li>
+                        <li><a href="team.html">
+                            <span class="link-ja">スタッフ紹介</span>
+                            <span class="link-zh" style="display:none">团队介绍</span>
+                            <span class="link-en" style="display:none">Team Introduction</span>
+                        </a></li>
+                        <li><a href="franchise.html">
+                            <span class="link-ja">FC加盟</span>
+                            <span class="link-zh" style="display:none">加盟招募</span>
+                            <span class="link-en" style="display:none">Franchise</span>
+                        </a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">
+                        <span class="footer-title-ja">お問い合わせ</span>
+                        <span class="footer-title-zh" style="display:none">联系我们</span>
+                        <span class="footer-title-en" style="display:none">Contact</span>
+                    </h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="contact-label">
+                                <span class="contact-label-ja">本店:</span>
+                                <span class="contact-label-zh" style="display:none">总部:</span>
+                                <span class="contact-label-en" style="display:none">Head Office:</span>
+                            </span>
+                            <span class="contact-value">03-6457-6386</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">
+                                <span class="contact-label-ja">新小岩支店:</span>
+                                <span class="contact-label-zh" style="display:none">新小岩分店:</span>
+                                <span class="contact-label-en" style="display:none">Shinkoiwa Branch:</span>
+                            </span>
+                            <span class="contact-value">03-6662-8772</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">
+                                <span class="contact-label-ja">営業時間:</span>
+                                <span class="contact-label-zh" style="display:none">营业时间:</span>
+                                <span class="contact-label-en" style="display:none">Business Hours:</span>
+                            </span>
+                            <span class="contact-value">10:00-19:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <span class="copyright-ja">© 2025 株式会社日清不動産. All rights reserved.</span>
+                    <span class="copyright-zh" style="display:none">© 2025 日清不动产有限公司. 保留所有权利.</span>
+                    <span class="copyright-en" style="display:none">© 2025 Nisshin Real Estate Co., Ltd. All rights reserved.</span>
+                </div>
+
+                <div class="footer-links-bottom">
+                    <a href="privacy.html">
+                        <span class="link-ja">プライバシーポリシー</span>
+                        <span class="link-zh" style="display:none">隐私政策</span>
+                        <span class="link-en" style="display:none">Privacy Policy</span>
+                    </a>
+                    <a href="terms.html">
+                        <span class="link-ja">利用規約</span>
+                        <span class="link-zh" style="display:none">使用条款</span>
+                        <span class="link-en" style="display:none">Terms of Service</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
